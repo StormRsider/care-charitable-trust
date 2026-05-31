@@ -113,7 +113,7 @@ export default function About() {
             <div className="space-y-6 text-left">
               <div className="space-y-2">
                 <span className="text-xs font-black text-teal-600 dark:text-teal-400 uppercase tracking-widest block">
-                  {language === "en" ? "How We Care" : "हम देखभाल कैसे करते हैं"}
+                  {language === "en" ? "How We Care" : "ഞങ്ങൾ പരിചരിക്കുന്നത് എങ്ങനെ"}
                 </span>
                 <h2 
                   className="font-sans text-3xl font-extrabold tracking-tight text-stone-900 dark:text-white"
@@ -136,12 +136,12 @@ export default function About() {
                   </div>
                   <div>
                     <h5 className="text-xs font-bold text-stone-900 dark:text-white">
-                      {language === "en" ? "100% Ethical & Audited NGO" : "100% नैतिक एवं जांची गई एनजीओ"}
+                      {language === "en" ? "100% Ethical & Audited NGO" : "100% സുതാര്യവും ഓഡിറ്റ് ചെയ്യപ്പെട്ടതുമായ NGO"}
                     </h5>
                     <p className="text-xs text-stone-400 mt-0.5">
                       {language === "en" 
                         ? `Operating under NGO license: ${clinicConfig.ngoRegNumber}. Regular audits published annually.`
-                        : `गैर-सरकारी संगठन लाइसेंस: ${clinicConfig.ngoRegNumber} के तहत संचालित। वार्षिक ऑडिट नियमित प्रकाशित।`}
+                        : `ഒരു ചാരിറ്റബിൾ ട്രസ്റ്റിന് കീഴിൽ പ്രവർത്തിക്കുന്ന ഞങ്ങളുടെ സ്ഥാപനം പൂർണ്ണമായും സുതാര്യമാണ്. വാർഷിക ഓഡിറ്റ് വിവരങ്ങൾ ലഭ്യമാണ്.`}
                     </p>
                   </div>
                 </div>
@@ -186,21 +186,21 @@ export default function About() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
           <span className="text-xs font-black text-teal-600 dark:text-teal-400 uppercase tracking-widest block">
-            {language === "en" ? "Our Journey" : "हमारी यात्रा"}
+            {language === "en" ? "Our Journey" : "ഞങ്ങളുടെ പ്രയാണം"}
           </span>
           <h2 
             className="font-sans text-3xl font-extrabold tracking-tight text-stone-900 dark:text-white"
-            onMouseEnter={() => handleSpeech(language === "en" ? "Milestones of Care" : "सेवा के महत्वपूर्ण पड़ाव")}
+            onMouseEnter={() => handleSpeech(language === "en" ? "Milestones of Care" : "കാരുണ്യത്തിന്റെ നാഴികക്കല്ലുകൾ")}
           >
-            {language === "en" ? "Milestones of Care" : "सेवा के महत्वपूर्ण पड़ाव"}
+            {language === "en" ? "Milestones of Care" : "കാരുണ്യത്തിന്റെ നാഴികക്കല്ലുകൾ"}
           </h2>
           <p 
             className="text-sm text-stone-500 dark:text-stone-400 max-w-2xl mx-auto leading-relaxed"
-            onMouseEnter={() => handleSpeech(language === "en" ? "How we grew from a small neighborhood screening cell to a fully-equipped physiotherapy clinic." : "कैसे हम एक छोटे पड़ोस के जांच शिविर से एक पूर्ण फिजियोथेरेपी क्लिनिक तक पहुंचे।")}
+            onMouseEnter={() => handleSpeech(language === "en" ? "How we grew from a small neighborhood screening cell to a fully-equipped physiotherapy clinic." : "ഒരു ചെറിയ മെഡിക്കൽ ക്യാമ്പിൽ നിന്നും ആരംഭിച്ച് അത്യാധുനിക ഫിസിയോതെറാപ്പി ക്ലിനിക്കിലേക്ക് ഞങ്ങൾ വളർന്ന നാൾവഴികൾ.")}
           >
             {language === "en"
-              ? "Through continuous support from local doctors, well-wishers, and patient fees, our NGO trust has consistently expanded medical access to families in need."
-              : "स्थानीय डॉक्टरों, शुभचिंतकों और मरीजों के सहयोग से, हमारे गैर-सरकारी संगठन ट्रस्ट ने जरूरतमंद परिवारों तक चिकित्सा पहुंच का लगातार विस्तार किया है।"}
+              ? "Through continuous support from local doctors, well-wishers, and generous donors, our NGO trust has consistently expanded medical access to families in need."
+              : "നാട്ടുകാരുടെയും ഡോക്ടർമാരുടെയും ഉദാരമനസ്കരുടെയും സഹായത്തോടെ ഞങ്ങളുടെ ചാരിറ്റബിൾ ട്രസ്റ്റ് നിർധനരായ രോഗികൾക്കായി ചികിത്സാ സൗകര്യങ്ങൾ വിപുലീകരിച്ചു കൊണ്ടിരിക്കുന്നു."}
           </p>
         </div>
 
@@ -243,30 +243,30 @@ export default function About() {
             <Heart className="h-10 w-10 text-orange-400 mx-auto animate-pulse" />
             <h3 
               className="text-2xl sm:text-3xl font-black tracking-tight"
-              onMouseEnter={() => handleSpeech(language === "en" ? "Support Our Charitable Trust" : "हमारे धर्मार्थ ट्रस्ट का समर्थन करें")}
+              onMouseEnter={() => handleSpeech(language === "en" ? "Support Our Charitable Trust" : "ഞങ്ങളുടെ ചാരിറ്റബിൾ ട്രസ്റ്റിനെ പിന്തുണയ്ക്കുക")}
             >
-              {language === "en" ? "Support Our Charitable Trust" : "हमारे धर्मार्थ ट्रस्ट का समर्थन करें"}
+              {language === "en" ? "Support Our Charitable Trust" : "ഞങ്ങളുടെ ചാരിറ്റബിൾ ട്രസ്റ്റിനെ പിന്തുണയ്ക്കുക"}
             </h3>
             <p 
               className="text-sm sm:text-base text-teal-100 leading-relaxed"
-              onMouseEnter={() => handleSpeech(language === "en" ? "Your contributions help us procure advanced mobility support aids and expand free rural checkup drives." : "आपका योगदान हमें उन्नत गतिशीलता सहायक साधन खरीदने और मुफ्त ग्रामीण शिविरों के विस्तार में मदद करता है।")}
+              onMouseEnter={() => handleSpeech(language === "en" ? "Your contributions help us procure advanced mobility support aids and expand free rural checkup drives." : "നിങ്ങളുടെ സംഭാവനകൾ അത്യാധുനിക ഉപകരണങ്ങൾ വാങ്ങുന്നതിനും സൗജന്യ മെഡിക്കൽ ക്യാമ്പുകൾ വ്യാപിപ്പിക്കുന്നതിനും സഹായിക്കുന്നു.")}
             >
               {language === "en"
-                ? "Every paid session and generous donation direct-funds completely free treatment for families holding low-income or Below Poverty Line certificates."
-                : "प्रत्येक सशुल्क सत्र और उदार दान सीधे गरीबी रेखा से नीचे या कम आय प्रमाण पत्र वाले परिवारों के लिए पूरी तरह से मुफ्त चिकित्सा उपचार की सुविधा प्रदान करता है।"}
+                ? "Your generous donations direct-fund completely free treatment and modern therapy for all patients in our community."
+                : "നിങ്ങളുടെ ഉദാരമായ സംഭാവനകൾ രോഗികൾക്ക് തികച്ചും സൗജന്യമായി മികച്ച ചികിത്സ ലഭ്യമാക്കാൻ സഹായിക്കുന്നു."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <Link
                 href="/outreach"
                 className="h-12 rounded-xl bg-white text-stone-900 hover:bg-stone-50 px-8 text-sm font-bold transition-all shadow-md text-center flex items-center justify-center"
               >
-                {language === "en" ? "Learn About Free Schemes" : "मुफ्त योजनाओं की जानकारी लें"}
+                {language === "en" ? "Learn About Community Programs" : "ഞങ്ങളുടെ സേവനങ്ങളെക്കുറിച്ചറിയുക"}
               </Link>
               <Link
                 href="/contact"
                 className="h-12 rounded-xl bg-teal-900/40 hover:bg-teal-900/60 border border-white/20 text-white px-7 text-sm font-bold transition-all text-center flex items-center justify-center gap-1.5"
               >
-                <span>{language === "en" ? "Contact Trust Office" : "ट्रस्ट कार्यालय से संपर्क करें"}</span>
+                <span>{language === "en" ? "Contact Trust Office" : "ട്രസ്റ്റ് ഓഫീസുമായി ബന്ധപ്പെടുക"}</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

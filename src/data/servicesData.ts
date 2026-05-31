@@ -45,8 +45,8 @@ export const servicesData: ServiceItem[] = [
       "ബാലൻസ് വീണ്ടെടുക്കാനുള്ള പ്രത്യേക പരിശീലനങ്ങൾ"
     ],
     iconName: "Zap",
-    billingType: "NGO Funded - 100% Free for Eligible Families",
-    billingTypeHindi: "പൂർണ്ണമായും സൗജന്യ സേവനം - നിർധനരായ രോഗികൾക്ക്"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "pain-management",
@@ -79,8 +79,8 @@ export const servicesData: ServiceItem[] = [
       "മയോഫേഷ്യൽ ട്രിഗർ പോയിന്റ് റിലീസ്"
     ],
     iconName: "Flame",
-    billingType: "Highly Subsidized (₹100/session, waived for low-income)",
-    billingTypeHindi: "അത്യധികം സബ്‌സിഡി നിരക്കിൽ (ഒരു സെഷന് ₹100, നിർധനർക്ക് സൗജന്യം)"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "exercise-therapy",
@@ -113,8 +113,8 @@ export const servicesData: ServiceItem[] = [
       "കാർഡിയോവാസ്കുലർ ഫിറ്റ്നസ് വ്യായാമങ്ങൾ"
     ],
     iconName: "Activity",
-    billingType: "Subsidized sliding scale based on household income",
-    billingTypeHindi: "സാമ്പത്തിക സാഹചര്യത്തിനനുസരിച്ച് ക്രമീകരിച്ച സബ്‌സിഡി നിരക്ക്"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "pediatric-physio",
@@ -147,8 +147,8 @@ export const servicesData: ServiceItem[] = [
       "മാതാപിതാക്കൾക്ക് നൽകുന്ന വ്യായാമ നിർദ്ദേശങ്ങൾ"
     ],
     iconName: "Heart",
-    billingType: "100% Free - Sponsored by Care Trust Children's Fund",
-    billingTypeHindi: "പൂർണ്ണമായും സൗജന്യം - കെയർ ട്രസ്റ്റിന്റെ സ്പോൺസർഷിപ്പിൽ"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "geriatric-rehab",
@@ -181,42 +181,8 @@ export const servicesData: ServiceItem[] = [
       "സുരക്ഷിതമായി എഴുന്നേൽക്കാനും നടക്കാനുമുള്ള ശീലങ്ങൾ"
     ],
     iconName: "Smile",
-    billingType: "Senior Citizen Program - Waiver Available",
-    billingTypeHindi: "മുതിർന്ന പൗരന്മാർക്കായുള്ള പ്രത്യേക പദ്ധതി - പൂർണ്ണ ഇളവുകൾ ലഭ്യമാണ്"
-  },
-  {
-    id: "home-physio",
-    title: "Home Physiotherapy",
-    titleHindi: "വീടുകളിൽ എത്തി നൽകുന്ന ഫിസിയോതെറാപ്പി (ഹോം ഫിസിയോ)",
-    description: "Dedicated mobile rehabilitation services delivered directly to the homes of bedridden, paralyzed, or severely disabled patients.",
-    descriptionHindi: "കിടപ്പിലായവർ, പക്ഷാഘാത രോഗികൾ, തീവ്രമായ ശാരീരിക വൈകല്യമുള്ളവർ എന്നിവരുടെ വീടുകളിൽ നേരിട്ടെത്തി നൽകുന്ന ചികിത്സാ സേവനങ്ങൾ.",
-    symptoms: [
-      "Bedridden Patients / Severe Paralysis",
-      "Post-Stroke Immediate Recovery",
-      "High Mobility Restriction / Fractures",
-      "Severe Spinal Injury Disability"
-    ],
-    symptomsHindi: [
-      "കിടപ്പിലായ രോഗികൾ / കടുത്ത പക്ഷാഘാതമുള്ളവർ",
-      "പക്ഷാഘാതം (സ്ട്രോക്ക്) സംഭവിച്ചതിന് ശേഷമുള്ള അടിയന്തര ചികിത്സ",
-      "തീവ്രമായ ചലന പരിമിതികൾ / എല്ല് പൊട്ടൽ കാരണം എഴുന്നേൽക്കാൻ കഴിയാത്തവർ",
-      "നട്ടെല്ലിന് ക്ഷതമേറ്റ് ചലനശേഷി പൂർണ്ണമായും നഷ്ടപ്പെട്ടവർ"
-    ],
-    techniques: [
-      "Bedside Passive ROM stretches",
-      "Bed Mobility & Transfer drills",
-      "Chest Physiotherapy & Airway clearance",
-      "Portable TENS & Exercise Kits"
-    ],
-    techniquesHindi: [
-      "ബെഡ്സൈഡ് പാസീവ് റേഞ്ച് ഓഫ് മോഷൻ വ്യായാമങ്ങൾ",
-      "ബെഡ് മൊബിലിറ്റി & ട്രാൻസ്ഫർ പരിശീലനങ്ങൾ",
-      "ശ്വാസകോശ സംബന്ധമായ ഫിസിയോതെറാപ്പി (ചെസ്റ്റ് ഫിസിയോ)",
-      "പോർട്ടബിൾ TENS & വ്യായാമ കിറ്റുകൾ"
-    ],
-    iconName: "Home",
-    billingType: "Free Outreach Service for Underprivileged Bedridden Patients",
-    billingTypeHindi: "സാമ്പത്തികശേഷി കുറഞ്ഞ കിടപ്പിലായ രോഗികൾക്ക് പൂർണ്ണമായും സൗജന്യമായി"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "post-surgery",
@@ -249,8 +215,8 @@ export const servicesData: ServiceItem[] = [
       "പ്രോഗ്രസീവ് പേശി ബലപ്പെടുത്തൽ വ്യായാമങ്ങൾ"
     ],
     iconName: "Activity",
-    billingType: "Subsidized sliding scale based on household income",
-    billingTypeHindi: "സാമ്പത്തിക സാഹചര്യത്തിനനുസരിച്ച് ക്രമീകരിച്ച സബ്‌സിഡി നിരക്ക്"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "walking-gait-training",
@@ -283,8 +249,8 @@ export const servicesData: ServiceItem[] = [
       "ഫൂട്ട് ഡ്രോപ്പ് തിരുത്തൽ വ്യായാമങ്ങൾ"
     ],
     iconName: "Activity",
-    billingType: "Subsidized flat clinic fee (waived for low-income)",
-    billingTypeHindi: "സബ്‌സിഡി നിരക്കിൽ (നിർധനർക്ക് പൂർണ്ണമായും സൗജന്യം)"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
     id: "electrotherapy",
@@ -317,7 +283,7 @@ export const servicesData: ServiceItem[] = [
       "ഇലക്ട്രിക്കൽ മസിൽ സ്റ്റിമുലേഷൻ (EMS)"
     ],
     iconName: "Zap",
-    billingType: "Standard subsidized rate (₹50/modality, waived for needy)",
-    billingTypeHindi: "കുറഞ്ഞ സബ്‌സിഡി നിരക്കിൽ (നിർധനർക്ക് പൂർണ്ണമായും സൗജന്യം)"
+    billingType: "100% Free - Supported by Donations",
+    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   }
 ];

@@ -16,6 +16,27 @@ import {
 export default function Footer() {
   const { language } = useLanguage();
   const { speakText } = useAccessibility();
+  const [mounted, setMounted] = React.useState(false);
+  const [logoSrc, setLogoSrc] = React.useState("/logo.jpg");
+  const [logoError, setLogoError] = React.useState(false);
+
+  const handleLogoError = () => {
+    if (logoSrc === "/logo.jpg") {
+      setLogoSrc("/logo.png");
+    } else if (logoSrc === "/logo.png") {
+      setLogoSrc("/logo.jpeg");
+    } else if (logoSrc === "/logo.jpeg") {
+      setLogoSrc("/logo.webp");
+    } else if (logoSrc === "/logo.webp") {
+      setLogoSrc("/logo.svg");
+    } else {
+      setLogoError(true);
+    }
+  };
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSpeech = (text: string) => {
     speakText(text);
@@ -26,7 +47,7 @@ export default function Footer() {
   const quickLinks = [
     { href: "#about", label: language === "en" ? "About Us" : "ഞങ്ങളെക്കുറിച്ച്" },
     { href: "#services", label: language === "en" ? "Services" : "സേവനങ്ങൾ" },
-    { href: "#palliative", label: language === "en" ? "Palliative Care" : "പാലിയേറ്റീവ്" },
+    { href: "#palliative", label: language === "en" ? "Community Programs" : "കമ്മ്യൂണിറ്റി പ്രോഗ്രാമുകൾ" },
     { href: "#facilities", label: language === "en" ? "Facilities" : "സൗകര്യങ്ങൾ" },
     { href: "#gallery", label: language === "en" ? "Gallery" : "ഗാലറി" },
     { href: "#reviews", label: language === "en" ? "Reviews" : "അഭിപ്രായങ്ങൾ" },
@@ -56,8 +77,8 @@ export default function Footer() {
                 onMouseEnter={() => handleSpeech(language === "en" ? "We ensure no patient in need is turned away." : "അർഹരായ ഒരു രോഗിക്കും പരിചരണം നിഷേധിക്കില്ലെന്ന് ഞങ്ങൾ ഉറപ്പുനൽകുന്നു.")}
               >
                 {language === "en" 
-                  ? "We ensure no patient in need is turned away. Paid orthopedic and rehabilitation treatments directly fund free high-quality physiotherapy and palliative care support for underprivileged families in Edappal and surrounding rural areas." 
-                  : "ആവശ്യക്കാരായ ഒരു രോഗിക്കും പരിചരണം നിഷേധിക്കില്ലെന്ന് ഞങ്ങൾ ഉറപ്പുനൽകുന്നു. സാമ്പത്തികശേഷിയുള്ളവരിൽ നിന്നും ഈടാക്കുന്ന ഒപി ഫീസുകൾ ഉപയോഗിച്ച് നിർധനരായ രോഗികൾക്ക് സൗജന്യമായി മികച്ച ഫിസിയോതെറാപ്പിയും പാലിയേറ്റീവ് കെയറും ഞങ്ങൾ ഉറപ്പുനൽകുന്നു."}
+                  ? "We ensure no patient in need is turned away. Our physical rehabilitation therapies are 100% free of charge, funded entirely by generous community donations and trust well-wishers to support underprivileged families in Edappal and surrounding regions." 
+                  : "ആവശ്യക്കാരായ ഒരു രോഗിക്കും പരിചരണം നിഷേധിക്കില്ലെന്ന് ഞങ്ങൾ ഉറപ്പുനൽകുന്നു. ഞങ്ങളുടെ എല്ലാ ഫിസിയോതെറാപ്പിയും പുനരധിവാസ ചികിത്സകളും 100% സൗജന്യമാണ്. ഉദാരമനസ്കരുടെയും സംഭാവനകളുടെയും പിന്തുണയോടെയാണ് ഇത് പ്രവർത്തിക്കുന്നത്."}
               </p>
             </div>
           </div>
@@ -77,18 +98,27 @@ export default function Footer() {
             <a 
               href="#" 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2 text-brand-light"
+              className="flex items-center gap-2.5 text-brand-light"
               onMouseEnter={() => handleSpeech(clinicConfig.name)}
             >
-              <Activity className="h-6 w-6 stroke-[2.5]" />
+              {mounted && !logoError ? (
+                <img 
+                  src={logoSrc} 
+                  alt="Care Village Logo" 
+                  className="h-7 w-7 shrink-0 object-contain rounded bg-white/5 border border-brand-light/35 p-0.5 smooth-transition"
+                  onError={handleLogoError}
+                />
+              ) : (
+                <Activity className="h-6 w-6 stroke-[2.5]" />
+              )}
               <span className="font-display text-lg font-black text-white leading-none">
                 Care Village
               </span>
             </a>
             <p className="text-sm text-brand-light leading-relaxed">
               {language === "en"
-                ? "Restoring pain-free mobility and dignity. A premier registered non-profit rehabilitation center and community palliative care trust located near Salafi Masjid, Edappal, Kerala."
-                : "വേദനരഹിതമായ ചലനശേഷിയും അന്തസ്സും വീണ്ടെടുക്കുന്നു. എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന മികച്ച പുനരധിവാസ കേന്ദ്രവും പാലിയേറ്റീവ് കെയർ ട്രസ്റ്റും."}
+                ? "Restoring pain-free mobility and dignity. A premier registered non-profit rehabilitation center and community welfare trust located near Salafi Masjid, Edappal, Kerala."
+                : "വേദനരഹിതമായ ചലനശേഷിയും അന്തസ്സും വീണ്ടെടുക്കുന്നു. എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന മികച്ച പുനരധിവാസ കേന്ദ്രവും കമ്മ്യൂണിറ്റി വെൽഫെയർ ട്രസ്റ്റും."}
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-brand-lightest bg-brand-slate/20 border border-brand-slate/40 px-3 py-1.5 rounded-lg w-fit">
               <Award className="h-3.5 w-3.5" />

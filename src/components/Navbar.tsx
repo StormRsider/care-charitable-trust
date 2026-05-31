@@ -21,8 +21,26 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
   const { speakText } = useAccessibility();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [mounted, setMounted] = useState(false);
+  const [logoSrc, setLogoSrc] = useState("/logo.jpg");
+  const [logoError, setLogoError] = useState(false);
+
+  const handleLogoError = () => {
+    if (logoSrc === "/logo.jpg") {
+      setLogoSrc("/logo.png");
+    } else if (logoSrc === "/logo.png") {
+      setLogoSrc("/logo.jpeg");
+    } else if (logoSrc === "/logo.jpeg") {
+      setLogoSrc("/logo.webp");
+    } else if (logoSrc === "/logo.webp") {
+      setLogoSrc("/logo.svg");
+    } else {
+      setLogoError(true);
+    }
+  };
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
@@ -36,7 +54,8 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
   const navLinks = [
     { href: "#about", label: language === "en" ? "About" : "ഞങ്ങളെക്കുറിച്ച്" },
     { href: "#services", label: language === "en" ? "Services" : "സേവനങ്ങൾ" },
-    { href: "#palliative", label: language === "en" ? "Palliative Care" : "പാലിയേറ്റീവ്" },
+    { href: "#donate", label: language === "en" ? "Donate" : "സംഭാവന" },
+    { href: "#palliative", label: language === "en" ? "Palliative" : "പാലിയേറ്റീവ്" },
     { href: "#facilities", label: language === "en" ? "Facilities" : "സൗകര്യങ്ങൾ" },
     { href: "#gallery", label: language === "en" ? "Gallery" : "ഗാലറി" },
     { href: "#reviews", label: language === "en" ? "Reviews" : "അഭിപ്രായങ്ങൾ" },
@@ -61,10 +80,19 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               onMouseEnter={() => handleSpeech("Care Village - Care Charitable Trust")}
             >
-              {/* Elegant Custom Logo Placeholder Container */}
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none smooth-transition group-hover:bg-brand-lightest/20 group-hover:text-white">
-                CV
-              </div>
+              {/* Elegant Custom Logo Container with Fallback */}
+              {mounted && !logoError ? (
+                <img 
+                  src={logoSrc} 
+                  alt="Care Village Logo" 
+                  className="h-11 w-11 shrink-0 object-contain rounded-xl bg-white/5 border border-brand-light/35 p-1 smooth-transition group-hover:scale-105"
+                  onError={handleLogoError}
+                />
+              ) : (
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none smooth-transition group-hover:bg-brand-lightest/20 group-hover:text-white">
+                  CV
+                </div>
+              )}
               <div className="flex flex-col text-left">
                 <span className="font-display text-lg font-black tracking-tight leading-none group-hover:text-brand-light transition-colors duration-300">
                   Care Village
@@ -77,13 +105,13 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => {
               return (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-xs uppercase tracking-widest font-bold text-brand-light hover:text-white transition-colors duration-300 relative py-1"
+                  className="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-brand-light hover:text-white transition-colors duration-300 relative py-1"
                   onMouseEnter={() => handleSpeech(link.label)}
                 >
                   {link.label}
@@ -93,12 +121,22 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
           </nav>
 
           {/* Desktop Controls (Tidied as requested: No light toggle, No CTA button, Clean Malayalam toggle) */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
             
+            {/* Donate Button */}
+            <a
+              href="#donate"
+              className="flex h-9 items-center justify-center gap-1.5 rounded-xl bg-brand-lightest border border-brand-light/30 px-4 text-xs font-black uppercase tracking-wider text-brand-slate hover:bg-white hover:text-brand-dark transition-all hover:scale-105 active:scale-95 shadow-sm animate-pulse-slow"
+              onMouseEnter={() => handleSpeech(language === "en" ? "Donate Now to Support Our Cause" : "സംഭാവന നൽകുക")}
+            >
+              <span className="h-2 w-2 rounded-full bg-brand-slate animate-ping shrink-0" />
+              <span>{language === "en" ? "Donate" : "സംഭാവന"}</span>
+            </a>
+
             {/* Malayalam Language Selector */}
             <button
               onClick={toggleLanguage}
-              className="flex h-9 items-center gap-2 rounded-xl border border-brand-slate/40 px-3.5 text-xs font-bold text-brand-light hover:border-white hover:text-white transition-colors duration-300"
+              className="flex h-9 items-center gap-2 rounded-xl border border-brand-slate/40 px-3 text-xs font-bold text-brand-light hover:border-white hover:text-white transition-colors duration-300"
               title="Change Language / ഭാഷ മാറ്റുക"
               onMouseEnter={() => handleSpeech(language === "en" ? "Change language to Malayalam" : "ഭാഷ ഇംഗ്ലീഷ് ആക്കുക")}
             >

@@ -32,6 +32,23 @@ export default function HomePage() {
   const { speakText } = useAccessibility();
   const [activeFacility, setActiveFacility] = useState(0);
   const [activeSection, setActiveSection] = useState("hero");
+  const [mounted, setMounted] = useState(false);
+  const [logoSrc, setLogoSrc] = useState("/logo.jpg");
+  const [logoError, setLogoError] = useState(false);
+
+  const handleLogoError = () => {
+    if (logoSrc === "/logo.jpg") {
+      setLogoSrc("/logo.png");
+    } else if (logoSrc === "/logo.png") {
+      setLogoSrc("/logo.jpeg");
+    } else if (logoSrc === "/logo.jpeg") {
+      setLogoSrc("/logo.webp");
+    } else if (logoSrc === "/logo.webp") {
+      setLogoSrc("/logo.svg");
+    } else {
+      setLogoError(true);
+    }
+  };
 
   const scrollSections = [
     { id: "hero", label: "Home", labelMl: "ഹോം" },
@@ -55,6 +72,7 @@ export default function HomePage() {
 
   // Modern Intersection Observer for Smooth Scroll Reveals & Section Spy
   useEffect(() => {
+    setMounted(true);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -173,9 +191,9 @@ export default function HomePage() {
     },
     {
       url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
-      title: "Palliative Home Care Outreach",
-      titleHindi: "പാലിയേറ്റീവ് ഹോം കെയർ വിസിറ്റുകൾ",
-      desc: "Delivering pain relief and support directly to bedridden patients in local zones."
+      title: "Community Welfare Outreach",
+      titleHindi: "കമ്മ്യൂണിറ്റി വെൽഫെയർ ഔട്ട്രീച്ച്",
+      desc: "Delivering mobility support, aid distribution, and free diagnostics to rural communities."
     }
   ];
 
@@ -201,8 +219,8 @@ export default function HomePage() {
     {
       name: "V. Devadas",
       location: "Ponnani, Kerala",
-      text: "I was suffering from chronic sciatica pain for 3 years. The electrotherapy and manual decompression stretches provided at just ₹100 here completely cured my back stiffness. Highly professional setup!",
-      textHindi: "3 വർഷത്തോളമായി ഞാൻ കടുത്ത നട്ടെല്ല് വേദന (സയാറ്റിക്ക) അനുഭവിക്കുകയായിരുന്നു. ഇവിടെ നിന്ന് വെറും ₹100 നിരക്കിൽ ചെയ്ത ഇലക്ട്രോതെറാപ്പിയും കൺസൾട്ടേഷനും എന്നെ വേദനയിൽ നിന്ന് പൂർണ്ണമായും മോചിപ്പിച്ചു. മികച്ച സേവനം!",
+      text: "I was suffering from chronic sciatica pain for 3 years. The electrotherapy and manual decompression stretches provided completely free of cost here completely cured my back stiffness. Highly professional setup!",
+      textHindi: "3 വർഷത്തോളമായി ഞാൻ കടുത്ത നട്ടെല്ല് വേദന (സയാറ്റിക്ക) അനുഭവിക്കുകയായിരുന്നു. ഇവിടെ നിന്ന് തികച്ചും സൗജന്യമായി ചെയ്ത ഇലക്ട്രോതെറാപ്പിയും കൺസൾട്ടേഷനും എന്നെ വേദനയിൽ നിന്ന് പൂർണ്ണമായും മോചിപ്പിച്ചു. മികച്ച സേവനം!",
       rating: 5,
       date: "04 April 2026",
       condition: "Sciatica Treatment"
@@ -235,9 +253,19 @@ export default function HomePage() {
 
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-20 text-center flex flex-col items-center justify-center h-full space-y-9 animate-fade-in-up">
           
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none animate-float shadow-xl">
-            CV
-          </div>
+          {/* Dynamic Floating Logo Emblem Above Main Title */}
+          {mounted && !logoError ? (
+            <img 
+              src={logoSrc} 
+              alt="Care Village Logo" 
+              className="h-16 w-16 shrink-0 object-contain rounded-2xl bg-white/10 border border-brand-light/30 p-1.5 animate-float shadow-xl"
+              onError={handleLogoError}
+            />
+          ) : (
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none animate-float shadow-xl">
+              CV
+            </div>
+          )}
 
           <div className="space-y-4 max-w-3xl">
             <h1 
@@ -275,7 +303,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="absolute bottom-6 flex flex-col items-center gap-2 animate-bounce">
+          <div className="absolute bottom-20 flex flex-col items-center gap-2 animate-bounce z-30">
             <span className="text-[10px] tracking-widest uppercase text-brand-light font-bold">
               {language === "en" ? "Scroll Down" : "താഴേക്ക് സ്ക്രോൾ ചെയ്യുക"}
             </span>
@@ -322,8 +350,8 @@ export default function HomePage() {
                 </p>
                 <p onMouseEnter={() => handleSpeech("Located near Salafi Masjid in Edappal, Kerala, we specialize in high-quality physical therapy and multi-disciplinary community support.")}>
                   {language === "en" 
-                    ? "Located near Salafi Masjid in Edappal, Kerala, the 'Care Village' rehabilitation wing functions on an ethical cross-subsidy clinical model. Paid consultative appointments from high-income families directly sponsor free high-fidelity stroke rehabilitation, pediatric therapies, and comprehensive orthopedic camps in surrounding rural zones."
-                    : "എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന 'കെയർ വില്ലേജ്' ഫിസിയോതെറാപ്പി বিভাগം പൂർണ്ണമായും സുതാര്യമായ രീതിയിലാണ് പ്രവർത്തിക്കുന്നത്. സാമ്പത്തികശേഷിയുള്ളവരിൽ നിന്നും ഈടാക്കുന്ന ഒപി ഫീസുകൾ ഉപയോഗിച്ച്, കെയർ വില്ലേജിൽ വരുന്ന നിർധനരായ കിടപ്പുരോഗികൾക്കും പക്ഷാഘാത ബാധിതർക്കും സൗജന്യമായി മികച്ച ചികിത്സ ഞങ്ങൾ ഉറപ്പുനൽകുന്നു."}
+                    ? "Located near Salafi Masjid in Edappal, Kerala, the 'Care Village' rehabilitation wing offers comprehensive physical therapy completely free of cost to all patients in need. Our operations, modern equipment, and treatments are supported entirely by the compassionate contributions of our donors and well-wishers."
+                    : "എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന 'കെയർ വില്ലേജ്' ഫിസിയോതെറാപ്പി വിഭാഗത്തിൽ വരുന്ന എല്ലാ രോഗികൾക്കും തികച്ചും സൗജന്യമായാണ് ഞങ്ങൾ മികച്ച ചികിത്സകൾ നൽകുന്നത്. ഞങ്ങളുടെ പ്രവർത്തനങ്ങളും ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും പൂർണ്ണമായും കാരുണ്യമനസ്കരായ ആളുകളുടെ സംഭാവനകൾ വഴിയാണ് മുന്നോട്ട് പോകുന്നത്."}
                 </p>
               </div>
 
@@ -343,8 +371,8 @@ export default function HomePage() {
                     <Heart className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-display font-black text-sm text-brand-dark">{language === "en" ? "Palliative Care" : "പാലിയേറ്റീവ് കെയർ"}</h4>
-                    <span className="text-xs text-brand-slate">{language === "en" ? "Free home care for bedridden" : "കിടപ്പുരോഗികൾക്കുള്ള സൗജന്യ പരിചരണം"}</span>
+                    <h4 className="font-display font-black text-sm text-brand-dark">{language === "en" ? "Community Programs" : "കമ്മ്യൂണിറ്റി പ്രോഗ്രാമുകൾ"}</h4>
+                    <span className="text-xs text-brand-slate">{language === "en" ? "Outreach camps & relief support" : "സൌജന്യ ഔട്ട്രീച്ച് ക്യാമ്പുകൾ"}</span>
                   </div>
                 </div>
 
@@ -393,18 +421,18 @@ export default function HomePage() {
 
                   <p className="font-display font-medium text-brand-dark text-sm leading-relaxed italic text-left">
                     {language === "en"
-                      ? "“By charging standard, affordable fees for our private consultations, we fully subsidize complete recovery treatments for underprivileged BPL patients, ensuring care remains human, and healing is made universal.”"
-                      : "“സാമ്പത്തികശേഷിയുള്ളവരിൽ നിന്നും ഈടാക്കുന്ന ഒപി ഫീസുകൾ ഉപയോഗിച്ച്, കെയർ വില്ലേജിൽ വരുന്ന നിർധനരായ കിടപ്പുരോഗികൾക്കും പക്ഷാഘാത ബാധിതർക്കും സൗജന്യമായി മികച്ച ചികിത്സ ഞങ്ങൾ ഉറപ്പുനൽകുന്നു.”"}
+                      ? "“At Care Village, we provide premium physical therapy and rehabilitation completely free of cost for all patients. We rely entirely on the generosity of our donors to keep our care universal, human, and accessible to everyone in need.”"
+                      : "“കെയർ വില്ലേജിൽ വരുന്ന ഏതൊരു രോഗിക്കും ഞങ്ങൾ ഫിസിയോതെറാപ്പിയും മറ്റ് മികച്ച ചികിത്സകളും പൂർണ്ണമായും സൗജന്യമായാണ് നൽകുന്നത്. ഈ കാരുണ്യ പ്രവർത്തനം തടസ്സമില്ലാതെ മുന്നോട്ട് കൊണ്ടുപോകുന്നതിന് നിങ്ങളുടെ ഉദാരമായ സംഭാവനകൾ ഞങ്ങൾ അഭ്യർത്ഥിക്കുന്നു.”"}
                   </p>
                 </div>
 
                 <div className="space-y-3.5 pt-4 border-t border-brand-light/60">
                   <div className="flex justify-between items-center text-xs text-brand-slate">
                     <span>{language === "en" ? "Kerala Society Registration" : "സംഘടന രജിസ്ട്രേഷൻ നമ്പർ"}</span>
-                    <span className="font-bold text-brand-dark">Reg. 142/IV/2021</span>
+                    <span className="font-bold text-brand-dark">Reg. 343/2021/IV</span>
                   </div>
                   <div className="flex justify-between items-center text-xs text-brand-slate">
-                    <span>{language === "en" ? "Subsidized Recovery Rate" : "രോഗമുക്തി നിരക്ക്"}</span>
+                    <span>{language === "en" ? "Clinical Success Rate" : "രോഗമുക്തി നിരക്ക്"}</span>
                     <span className="font-bold text-green-600">96.8% Successful</span>
                   </div>
                 </div>
@@ -440,11 +468,11 @@ export default function HomePage() {
             </h2>
             <p 
               className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed"
-              onMouseEnter={() => handleSpeech("Explore our 9 specialized rehabilitation therapies provided at highly subsidized or free tiers for qualifying families.")}
+              onMouseEnter={() => handleSpeech(language === "en" ? "Explore our specialized rehabilitation therapies provided completely free of charge to all patients, supported entirely by our community donors." : "രോഗികൾക്ക് പൂർണ്ണമായും സൗജന്യമായി വേദനരഹിതമായ ചലനശേഷിയും ആക്ടീവ് ബലവും നൽകുന്നതിനായി രൂപപ്പെടുത്തിയ ഫിസിയോതെറാപ്പി ചികിത്സകൾ.")}
             >
               {language === "en"
-                ? "Professional, evidence-based therapy protocols designed to restore pain-free movement and active strength, available on subsidized and fully sponsored NGO tiers."
-                : "അർഹരായ രോഗികൾക്ക് സൗജന്യമായും കുറഞ്ഞ നിരക്കിലും വേദനരഹിതമായ ചലനശേഷിയും ആക്ടീവ് ബലവും നൽകുന്നതിനായി രൂപപ്പെടുത്തിയ 9 പ്രത്യേക ചികിത്സകൾ."}
+                ? "Professional, evidence-based therapy protocols designed to restore pain-free movement and active strength, provided 100% free of charge to all patients."
+                : "രോഗികൾക്ക് പൂർണ്ണമായും സൗജന്യമായി വേദനരഹിതമായ ചലനശേഷിയും ആക്ടീവ് ബലവും നൽകുന്നതിനായി രൂപപ്പെടുത്തിയ ഫിസിയോതെറാപ്പി ചികിത്സകൾ."}
             </p>
           </div>
 
@@ -516,13 +544,13 @@ export default function HomePage() {
                   </div>
 
                   <h3 className="font-display text-xl font-black text-brand-dark text-left">
-                    {language === "en" ? "Palliative Care Mission" : "പാലിയേറ്റീവ് കെയർ മിഷൻ"}
+                    {language === "en" ? "Community Support Mission" : "കമ്മ്യൂണിറ്റി സപ്പോർട്ട് മിഷൻ"}
                   </h3>
 
                   <p className="text-sm text-brand-slate leading-relaxed text-left">
                     {language === "en"
-                      ? "Palliative care goes beyond physical treatment. We focus on enhancing the quality of life for bedridden patients, distributing relief materials, and providing active educational backing for their children."
-                      : "പാലിയേറ്റീവ് കെയർ എന്നത് ഫിസിയോതെറാപ്പിയിൽ മാത്രം ഒതുങ്ങുന്ന ഒന്നല്ല. നിർധനരായ കിടപ്പുരോഗികൾക്ക് ആശ്വാസവും ജീവകാരുണ്യ പ്രവർത്തനങ്ങളും വിദ്യാഭ്യാസ പിന്തുണയും ലഭ്യമാക്കാൻ ഞങ്ങൾ പ്രവർത്തിക്കുന്നു."}
+                      ? "Our community welfare goes beyond physical treatment. We focus on enhancing the quality of life for families in distress, distributing relief materials, and providing active educational backing for their children."
+                      : "കമ്മ്യൂണിറ്റി വെൽഫെയർ എന്നത് ഫിസിയോതെറാപ്പിയിൽ മാത്രം ഒതുങ്ങുന്ന ഒന്നല്ല. ബുദ്ധിമുട്ടുന്ന കുടുംബങ്ങൾക്ക് ആശ്വാസവും ജീവകാരുണ്യ പ്രവർത്തനങ്ങളും അവരുടെ കുട്ടികൾക്ക് വിദ്യാഭ്യാസ പിന്തുണയും ലഭ്യമാക്കാൻ ഞങ്ങൾ പ്രവർത്തിക്കുന്നു."}
                   </p>
                 </div>
 
@@ -539,9 +567,9 @@ export default function HomePage() {
                 </span>
                 <h2 
                   className="font-display text-4xl sm:text-6xl font-black text-brand-dark leading-tight tracking-tight"
-                  onMouseEnter={() => handleSpeech("Palliative Care and Community Support")}
+                  onMouseEnter={() => handleSpeech("Community Welfare and Outreach")}
                 >
-                  {language === "en" ? "Palliative Care & Community Support" : "പാലിയേറ്റീവ് കെയർ & ഔട്ട്രീച്ച്"}
+                  {language === "en" ? "Community Welfare & Outreach" : "കമ്മ്യൂണിറ്റി വെൽഫെയർ & ഔട്ട്രീച്ച്"}
                 </h2>
               </div>
 
@@ -550,11 +578,11 @@ export default function HomePage() {
                 <div className="flex gap-4 group">
                   <div className="h-9 w-9 shrink-0 flex items-center justify-center rounded-lg bg-brand-slate/10 text-brand-dark font-black text-sm group-hover:bg-brand-dark group-hover:text-white smooth-transition">1</div>
                   <div>
-                    <h4 className="font-display font-black text-base text-brand-dark group-hover:text-brand-slate smooth-transition">{language === "en" ? "Community Outreach" : "കമ്മ്യൂണിറ്റി ഔട്ട്രീച്ച് (ഹോം കെയർ)"}</h4>
+                    <h4 className="font-display font-black text-base text-brand-dark group-hover:text-brand-slate smooth-transition">{language === "en" ? "Community Outreach" : "കമ്മ്യൂണിറ്റി ഔട്ട്രീച്ച് (സൌജന്യ ക്യാമ്പുകൾ)"}</h4>
                     <p className="text-sm text-brand-slate mt-1 leading-relaxed">
                       {language === "en"
-                        ? "Our dedicated physical therapists conduct routine mobile checkups and home visits, offering bed-side passive stretching, airway clearance, and mobility rehabilitation for bedridden patients inside Edappal and nearby villages."
-                        : "എടപ്പാൾ, പൊന്നാനി പ്രദേശങ്ങളിലെ കിടപ്പുരോഗികൾക്ക് അവരുടെ കിടക്കക്കരികിൽ ഫിസിയോതെറാപ്പിയും ആശ്വാസ പരിചരണങ്ങളും നൽകാൻ ഞങ്ങളുടെ പ്രത്യേക ഫിസിയോതെറാപ്പിസ്റ്റുകൾ പതിവായി വിസിറ്റ് നടത്തുന്നു."}
+                        ? "Our dedicated volunteers and therapists organize routine community health checkups and mobile diagnostics, offering physical screening and posture advice for families inside Edappal and nearby villages."
+                        : "എടപ്പാൾ പ്രദേശങ്ങളിലെ ജനങ്ങൾക്കായി ഞങ്ങളുടെ തെറാപ്പിസ്റ്റുകൾ സൌജന്യ മെഡിക്കൽ ക്യാമ്പുകളും ശാരീരിക പരിശോധനകളും നടത്തുന്നു."}
                     </p>
                   </div>
                 </div>
@@ -577,8 +605,8 @@ export default function HomePage() {
                     <h4 className="font-display font-black text-base text-brand-dark group-hover:text-brand-slate smooth-transition">{language === "en" ? "Educational Support" : "വിദ്യാഭ്യാസ പിന്തുണ"}</h4>
                     <p className="text-sm text-brand-slate mt-1 leading-relaxed">
                       {language === "en"
-                        ? "We secure the future of the younger generation. The trust sponsors direct educational grants, school supplies, textbooks, uniforms, and tuition sponsorships for children belonging to bedridden palliative patients."
-                        : "കിടപ്പിലായ പാലിയേറ്റീവ് രോഗികളുടെ മക്കളുടെ വിദ്യാഭ്യാസം തടസ്സപ്പെടാതിരിക്കാൻ അവർക്കുള്ള പുസ്തകങ്ങൾ, യൂണിഫോം, സ്കൂൾ ഫീസുകൾ എന്നിവ ട്രസ്റ്റ് നേരിട്ട് സ്പോൺസർ ചെയ്യുന്നു."}
+                        ? "We secure the future of the younger generation. The trust sponsors direct educational grants, school supplies, textbooks, uniforms, and tuition sponsorships for underprivileged children in our community."
+                        : "നിർധനരായ കുട്ടികളുടെ വിദ്യാഭ്യാസം തടസ്സപ്പെടാതിരിക്കാൻ അവർക്കുള്ള പുസ്തകങ്ങൾ, യൂണിഫോം, സ്കൂൾ ഫീസുകൾ എന്നിവ ട്രസ്റ്റ് നേരിട്ട് സ്പോൺസർ ചെയ്യുന്നു."}
                     </p>
                   </div>
                 </div>
@@ -627,8 +655,8 @@ export default function HomePage() {
             </h2>
             <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Our Care Village center features premium equipment and specialized physical therapy devices operated completely on charitable and subsidized scales."
-                : "കെയർ വില്ലേജിൽ ലഭ്യമാക്കിയിട്ടുള്ള അത്യാധുനിക ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും നടത്ത പരിശീലന സാമഗ്രകളും താഴെ പറയുന്നവയാണ്."}
+                ? "Our Care Village center features premium equipment and specialized physical therapy devices operated completely free of cost as a charitable mission."
+                : "കെയർ വില്ലേജിൽ ലഭ്യമാക്കിയിട്ടുള്ള അത്യാധുനിക ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും നടത്ത പരിശീലന സാമഗ്രകളും താഴെ പറയുന്നവയാണ്. ഇവയെല്ലാം പൂർണ്ണമായും സൗജന്യമാണ്."}
             </p>
           </div>
 
@@ -695,7 +723,7 @@ export default function HomePage() {
                   
                   <span className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-brand-light border border-brand-light/65 px-4 text-xs font-bold text-brand-dark">
                     <ShieldCheck className="h-4 w-4" />
-                    <span>{language === "en" ? "100% Free / Subsidized" : "സൗജന്യ / സബ്‌സിഡി ചികിത്സ"}</span>
+                    <span>{language === "en" ? "100% Free of Cost" : "പൂർണ്ണമായും സൗജന്യ ചികിത്സ"}</span>
                   </span>
                 </div>
 
@@ -714,63 +742,192 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= SECTION 5: GALLERY SECTION ================= */}
+      {/* ================= SECTION 5: GALLERY & DONATION SECTION ================= */}
       <section id="gallery" className="pt-24 pb-32 bg-background scroll-mt-16 relative overflow-hidden reveal-on-scroll">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div className="space-y-3 text-left">
-              <span className="text-xs font-black uppercase tracking-widest text-brand-slate">
-                {language === "en" ? "A Visual Journey of Hope" : "പ്രത്യാശ നിറഞ്ഞ ഗാലറി ദൃശ്യങ്ങൾ"}
-              </span>
-              <h2 
-                className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
-                onMouseEnter={() => handleSpeech("Our Clinic & Outreach Gallery")}
-              >
-                {language === "en" ? "Care Village Gallery" : "കെയർ വില്ലേജിൽ നിന്നുള്ള ചിത്രങ്ങൾ"}
-              </h2>
-              <p className="text-sm text-brand-slate max-w-xl leading-relaxed">
-                {language === "en"
-                  ? "Explore our physical infrastructure, diagnostic rehabilitation parallel bars, therapy rooms, and free community checkup camps in nearby zones."
-                  : "ഞങ്ങളുടെ മികച്ച ഫിസിയോതെറാപ്പി വിഭാഗം, സൗകര്യങ്ങൾ, പ്രദേശങ്ങളിൽ നടത്തിയ സൗജന്യ മെഡിക്കൽ ക്യാമ്പുകൾ എന്നിവയുടെ ദൃശ്യങ്ങൾ."}
-              </p>
-            </div>
-            
-            <div className="hidden md:flex items-center gap-2 text-xs font-bold text-brand-slate bg-brand-light/40 px-4 py-2 rounded-full border border-brand-light/65">
-              <ChevronLeft className="h-4 w-4" />
-              <span>{language === "en" ? "Swipe Horizontal to Explore" : "ഇടത്തോട്ട് / വലത്തോട്ട് സ്ക്രോൾ ചെയ്യുക"}</span>
-              <ChevronRight className="h-4 w-4" />
-            </div>
+          <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-black uppercase tracking-widest text-brand-slate">
+              {language === "en" ? "NGO Transparency & Trust" : "സുതാര്യതയും കമ്മ്യൂണിറ്റി പിന്തുണയും"}
+            </span>
+            <h2 
+              className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
+              onMouseEnter={() => handleSpeech("Care Village Gallery and Donation Support")}
+            >
+              {language === "en" ? "Gallery & Donation Support" : "ഗാലറിയും സംഭാവനയും"}
+            </h2>
+            <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
+              {language === "en"
+                ? "Explore our clean clinical environment and outreach checkups, and directly support our mission to keep clinical care 100% free for everyone."
+                : "ഞങ്ങളുടെ മികച്ച ഫിസിയോതെറാപ്പി വിഭാഗം, സൗകര്യങ്ങൾ, പ്രദേശങ്ങളിൽ നടത്തിയ സൗജന്യ മെഡിക്കൽ ക്യാമ്പുകൾ എന്നിവയുടെ ദൃശ്യങ്ങൾ കാണുകയും നിർധന രോഗികൾക്ക് സൗജന്യ ചികിത്സ ഉറപ്പുവരുത്താൻ സംഭാവന ചെയ്യുകയും ചെയ്യാം."}
+            </p>
           </div>
 
-          <div className="w-full overflow-x-auto py-4 px-2 no-scrollbar scroll-smooth flex gap-6 items-stretch select-none">
-            {galleryItems.map((item, idx) => (
-              <div 
-                key={idx}
-                className="w-[280px] sm:w-[360px] shrink-0 rounded-2xl overflow-hidden bg-white border border-brand-light hover-scale text-left group"
-              >
-                <div className="h-48 sm:h-56 relative overflow-hidden bg-brand-slate/10">
-                  <img 
-                    src={item.url} 
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 z-10" />
-                  <span className="absolute bottom-3 left-4 text-xs font-bold text-white z-20 flex items-center gap-1">
-                    <Sparkles className="h-3.5 w-3.5 text-brand-light" />
-                    <span>{isMalayalam ? item.titleHindi : item.title}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+            
+            {/* Left Column: Asymmetrical Visual Collage (7/12 Width) */}
+            <div className="lg:col-span-7 grid grid-cols-2 gap-4 h-fit">
+              {/* Item 1 - Large / Full Height Column */}
+              <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-3/4 shadow-sm hover:shadow-md transition-shadow">
+                <img 
+                  src={galleryItems[0].url} 
+                  alt={galleryItems[0].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
+                <div className="absolute bottom-5 left-5 right-5 z-20 text-left">
+                  <span className="text-[10px] bg-brand-light text-brand-dark px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider">
+                    {language === "en" ? "Clinic" : "ക്ലിനിക്"}
                   </span>
-                </div>
-                <div className="p-4 space-y-1">
-                  <h4 className="font-display font-black text-sm text-brand-dark">
-                    {isMalayalam ? item.titleHindi : item.title}
+                  <h4 className="font-display font-black text-sm sm:text-base text-white mt-2 leading-tight">
+                    {isMalayalam ? galleryItems[0].titleHindi : galleryItems[0].title}
                   </h4>
-                  <p className="text-xs text-brand-slate leading-relaxed">
-                    {item.desc}
-                  </p>
                 </div>
               </div>
-            ))}
+
+              {/* Stack of two small square ones */}
+              <div className="grid grid-rows-2 gap-4">
+                <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-square shadow-sm hover:shadow-md transition-shadow">
+                  <img 
+                    src={galleryItems[1].url} 
+                    alt={galleryItems[1].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
+                  <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
+                    <h4 className="font-display font-black text-xs sm:text-sm text-white leading-tight">
+                      {isMalayalam ? galleryItems[1].titleHindi : galleryItems[1].title}
+                    </h4>
+                  </div>
+                </div>
+
+                <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-square shadow-sm hover:shadow-md transition-shadow">
+                  <img 
+                    src={galleryItems[2].url} 
+                    alt={galleryItems[2].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
+                  <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
+                    <h4 className="font-display font-black text-xs sm:text-sm text-white leading-tight">
+                      {isMalayalam ? galleryItems[2].titleHindi : galleryItems[2].title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              {/* Item 4 - Wide Span */}
+              <div className="col-span-2 relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-16/9 shadow-sm hover:shadow-md transition-shadow">
+                <img 
+                  src={galleryItems[4].url} 
+                  alt={galleryItems[4].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
+                <div className="absolute bottom-5 left-5 right-5 z-20 text-left">
+                  <span className="text-[10px] bg-brand-light text-brand-dark px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider">
+                    {language === "en" ? "Outreach" : "ഔട്ട്രീച്ച്"}
+                  </span>
+                  <h4 className="font-display font-black text-sm sm:text-base text-white mt-2 leading-tight">
+                    {isMalayalam ? galleryItems[4].titleHindi : galleryItems[4].title}
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Donation details & Support Panel (5/12 Width) */}
+            <div className="lg:col-span-5 flex flex-col justify-between relative rounded-3xl overflow-hidden border border-brand-light/70 p-8 md:p-10 bg-white/70 backdrop-blur-md shadow-xl group smooth-transition hover:border-brand-slate/40 hover:shadow-2xl text-left">
+              <div className="absolute top-0 right-0 h-48 w-48 bg-brand-lightest rounded-full blur-3xl -translate-y-8 translate-x-8 opacity-70" />
+              
+              <div className="space-y-6 relative z-10">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-brand-dark text-white flex items-center justify-center shadow-md">
+                    <Heart className="h-5.5 w-5.5 text-brand-light fill-brand-light/10" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl sm:text-2xl font-black text-brand-dark">
+                      {language === "en" ? "Support Our Mission" : "ഞങ്ങളെ പിന്തുണയ്ക്കാം"}
+                    </h3>
+                    <span className="text-[10px] font-black uppercase text-brand-slate tracking-widest mt-0.5 block">
+                      {language === "en" ? "100% Free Humanitarian Rehab" : "സൗജന്യ ഫിസിയോതെറാപ്പി സംരംഭം"}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-brand-slate leading-relaxed">
+                  {language === "en" 
+                    ? "Care Village relies completely on public donations and kind well-wishers to provide state-of-the-art physiotherapy treatments free of cost to underprivileged families."
+                    : "നിർധന രോഗികൾക്ക് പൂർണ്ണമായും സൗജന്യമായി അത്യാധുനിക ഫിസിയോതെറാപ്പിയും മറ്റ് മികച്ച ചികിത്സകളും നൽകുന്നത് കാരുണ്യമനസ്കരായ ആളുകളുടെ സംഭാവനകൾ വഴിയാണ്."}
+                </p>
+
+
+                {/* GPay & UPI payment details */}
+                <div className="rounded-2xl bg-brand-lightest/45 border border-brand-light/65 p-5 space-y-3.5 shadow-inner">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-brand-slate block font-mono">
+                      {language === "en" ? "GPay & UPI Payment" : "ജിപേ & യുപിഐ വിവരങ്ങൾ"}
+                    </span>
+                    <span className="inline-flex h-4 items-center rounded-md bg-brand-dark/10 px-1.5 text-[8px] font-bold text-brand-dark uppercase tracking-widest">
+                      UPI Pay
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs leading-normal">
+                    <div className="text-left col-span-2">
+                      <span className="text-brand-slate block text-[10px] font-bold">{language === "en" ? "GPay / PhonePe Number" : "ജിപേ / ഫോൺപേ നമ്പർ"}</span>
+                      <span className="font-display font-black text-base text-brand-dark tracking-wide block">+91 8281 869769</span>
+                    </div>
+                    <div className="text-left col-span-2 border-t border-brand-light/40 pt-2.5 flex items-center justify-between gap-1.5">
+                      <div>
+                        <span className="text-brand-slate block text-[10px] font-bold">{language === "en" ? "UPI ID" : "യുപിഐ ഐഡി"}</span>
+                        <span className="font-mono font-bold text-brand-dark block text-xs tracking-wide">8281869769@okaxis</span>
+                      </div>
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText("8281869769@okaxis");
+                          alert(language === "en" ? "UPI ID Copied!" : "യുപിഐ ഐഡി കോപ്പി ചെയ്തു!");
+                        }}
+                        className="text-[9px] font-black text-brand-dark hover:underline uppercase shrink-0 pt-3.5 cursor-pointer"
+                      >
+                        {language === "en" ? "Copy ID" : "കോപ്പി ചെയ്യാം"}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 items-stretch relative z-10 w-full pt-4 border-t border-brand-light/40">
+                <button
+                  onClick={() => {
+                    const details = `CARE CHARITABLE TRUST\nGPay / PhonePe: +91 8281 869769\nUPI ID: 8281869769@okaxis`;
+                    navigator.clipboard.writeText(details);
+                    alert(language === "en" ? "GPay Details Copied to Clipboard!" : "ജിപേ വിവരങ്ങൾ കോപ്പി ചെയ്തു!");
+                  }}
+                  className="flex-1 h-12 rounded-xl border border-brand-slate/30 bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-sm active:scale-95 cursor-pointer"
+                >
+                  {language === "en" ? "Copy Details" : "വിവരങ്ങൾ കോപ്പി ചെയ്യാം"}
+                </button>
+                <a
+                  href={`https://wa.me/${clinicConfig.whatsappNumber}?text=${encodeURIComponent(
+                    language === "en"
+                      ? "Hello, I would like to support Care Charitable Trust with a donation. Please guide me."
+                      : "നമസ്കാരം, കെയർ ചാരിറ്റബിൾ ട്രസ്റ്റിലേക്ക് സംഭാവന നൽകാൻ ഞാൻ ആഗ്രഹിക്കുന്നു. ദയവായി വിവരങ്ങൾ നൽകുക."
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 h-12 rounded-xl bg-brand-dark hover:bg-brand-slate text-white text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-95"
+                >
+                  {language === "en" ? "Send Receipt" : "രസീത് അയക്കാം"}
+                </a>
+              </div>
+
+              <div className="mt-6 pt-3 border-t border-dashed border-brand-light flex justify-between items-center text-[10px] text-brand-slate font-bold relative z-10">
+                <span>{language === "en" ? "Charitable Trust Reg No:" : "ചാരിറ്റബിൾ ട്രസ്റ്റ് രജിസ്റ്റർ നമ്പർ:"}</span>
+                <span className="text-brand-dark">{clinicConfig.ngoRegNumber}</span>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -884,10 +1041,17 @@ export default function HomePage() {
                 >
                   <div className="flex flex-col items-center">
                     <div className="h-28 w-28 rounded-full border-3 border-brand-slate overflow-hidden mb-4 bg-brand-light/30 shrink-0 shadow-inner relative smooth-transition group-hover:border-brand-dark">
-                      <div className="absolute inset-0 flex items-center justify-center text-brand-gray bg-brand-lightest/40 uppercase font-black text-xl select-none">
-                        {doc.name.charAt(4)}
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-brand-slate/20 to-brand-slate/10 group-hover:scale-105 transition-transform duration-500" />
+                      {doc.imagePath ? (
+                        <img 
+                          src={doc.imagePath} 
+                          alt={doc.name} 
+                          className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center text-brand-gray bg-brand-lightest/40 uppercase font-black text-xl select-none">
+                          {doc.name.charAt(4)}
+                        </div>
+                      )}
                     </div>
 
                     <h4 
@@ -997,7 +1161,7 @@ export default function HomePage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full filter brightness-[98%] contrast-[101%]"
+                  className="w-full h-full"
                 />
               </div>
             </div>

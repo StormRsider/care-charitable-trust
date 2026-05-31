@@ -231,7 +231,7 @@ export default function Gallery() {
               </p>
               
               <div className="pt-4 border-t border-stone-100 dark:border-slate-700/60 flex items-center justify-between text-xs font-semibold text-stone-400">
-                <span>{language === "en" ? "Dwarka Delhi Clinic" : "द्वारका दिल्ली क्लिनिक"}</span>
+                <span>{language === "en" ? "Edappal Clinic" : "എടപ്പാൾ ക്ലിനിക്"}</span>
                 <button
                   onClick={() => setSelectedItem(null)}
                   className="text-teal-650 hover:underline"

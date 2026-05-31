@@ -36,14 +36,14 @@ export interface ClinicConfig {
 export const clinicConfig: ClinicConfig = {
   name: "Care Village",
   ngoName: "Care Charitable Trust",
-  ngoRegNumber: "Reg. No: 142/IV/2021 (Kerala Charitable Societies Act)",
-  phone: "+919846322222",
-  phoneFormatted: "+91 98463 22222",
-  email: "carevillageedappal@gmail.com",
-  whatsappNumber: "919846322222",
-  whatsappMessage: "Hello Care Village Edappal, I would like to enquire about your physiotherapy and palliative care services.",
-  googleMapsIframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1437775083584!2d75.9818817!3d10.7611111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c39050000001%3A0xe54d89679fcd7e0a!2sSalafi%20Masjid%2C%20Edappal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-  address: "Salafi Masjid Complex, Edappal, Malappuram District, Kerala - 679576",
+  ngoRegNumber: "Reg. No: 343/2021/IV",
+  phone: "+918281869769",
+  phoneFormatted: "+91 8281 869769",
+  email: "careedappal@gmail.com",
+  whatsappNumber: "918281869769",
+  whatsappMessage: "Hello Care Village Edappal, I would like to make a donation or enquire about your physiotherapy clinic.",
+  googleMapsIframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2992443228127!2d76.01106659999998!3d10.788377400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b9003000e66d%3A0x41fae23ccb26c14b!2sCARE%20VILLAGE%20EDAPPAL!5e0!3m2!1sen!2sin!4v1780254579118!5m2!1sen!2sin",
+  address: "Q2Q6+9C4, CARE VILLAGE -CALICUT ROAD, VIA, near GEETHA DOCTOR, opp. GOVINDA THEATRE, Edappal, Kerala 679576",
   socials: {
     facebook: "https://facebook.com/carevillage.edappal",
     twitter: "https://twitter.com/carevillage_edp",
@@ -51,19 +51,19 @@ export const clinicConfig: ClinicConfig = {
     linkedin: "https://linkedin.com/company/care-village-edappal"
   },
   timings: {
-    weekdays: "Monday - Saturday",
+    weekdays: "Monday - Friday",
     weekdaysTiming: "8:00 AM - 6:00 PM",
-    saturday: "Palliative Home Care",
-    saturdayTiming: "9:00 AM - 4:00 PM",
+    saturday: "Saturday",
+    saturdayTiming: "8:00 AM - 4:00 PM",
     sunday: "Sunday",
-    sundayTiming: "Closed (Medical Camps Only)"
+    sundayTiming: "Closed"
   },
   timingsHindi: {
-    weekdays: "सोमवार - शनिवार",
+    weekdays: "सोमवार - शुक्रवार",
     weekdaysTiming: "सुबह 8:00 - शाम 6:00 बजे",
-    saturday: "प्रशामक गृह देखभाल",
-    saturdayTiming: "सुबह 9:00 - दोपहर 4:00 बजे",
+    saturday: "शनिवार",
+    saturdayTiming: "सुबह 8:00 - दोपहर 4:00 बजे",
     sunday: "रविवार",
-    sundayTiming: "बंद (केवल चिकित्सा शिविर)"
+    sundayTiming: "बंद"
   }
 };
