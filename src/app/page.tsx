@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { useAccessibility } from "../context/AccessibilityContext";
 import { servicesData } from "../data/servicesData";
-import { teamData } from "../data/teamData";
+import { clinicalFaculty, trustOfficers } from "../data/teamData";
 import { clinicConfig } from "../data/clinicConfig";
 import { 
   Heart, 
@@ -54,6 +54,7 @@ export default function HomePage() {
     { id: "hero", label: "Home", labelMl: "ഹോം" },
     { id: "about", label: "About", labelMl: "ഞങ്ങളെക്കുറിച്ച്" },
     { id: "services", label: "Services", labelMl: "സേവനങ്ങൾ" },
+    { id: "donate", label: "Donate", labelMl: "സംഭാവന" },
     { id: "palliative", label: "Palliative", labelMl: "പാലിയേറ്റീവ്" },
     { id: "facilities", label: "Facilities", labelMl: "സൗകര്യങ്ങൾ" },
     { id: "gallery", label: "Gallery", labelMl: "ഗാലറി" },
@@ -199,31 +200,31 @@ export default function HomePage() {
 
   const reviews = [
     {
-      name: "K. Raghavan Nair",
+      name: "Ummer",
       location: "Edappal, Malappuram",
-      text: "After my stroke, I lost all movement in my right side. Thanks to Dr. Haris and the Care Village team's intensive neurological rehabilitation, I can now walk independently. Truly a blessing for poor families.",
-      textHindi: "സ്ട്രോക്ക് ബാധിച്ച് എന്റെ വലതുഭാഗം തളർന്നുപോയിരുന്നു. ഡോ. ഹാരിസിന്റെയും കെയർ വില്ലേജ് ടീമിന്റെയും തീവ്രമായ ഫിസിയോതെറാപ്പി കാരണം ഇപ്പോൾ എനിക്ക് സ്വതന്ത്രമായി നടക്കാൻ കഴിയുന്നുണ്ട്. നിർധനർക്ക് ഇതൊരു വലിയ അനുഗ്രഹമാണ്.",
+      text: "After suffering from a stroke, I lost the ability to move my right side. The intensive neuro-rehab here helped me regain my movement completely free of cost. Today, I can walk to the masjid without support.",
+      textHindi: "സ്ട്രോക്ക് ബാധിച്ച് എന്റെ വലതുഭാഗം തളർന്നുപോയിരുന്നു. കെയർ വില്ലേജിലെ മികച്ച ഫിസിയോതെറാപ്പി കാരണം ഇപ്പോൾ എനിക്ക് സ്വതന്ത്രമായി നടക്കാൻ കഴിയുന്നുണ്ട്. പാവപ്പെട്ടവർക്ക് ഇതൊരു വലിയ അനുഗ്രഹമാണ്.",
       rating: 5,
       date: "12 May 2026",
       condition: "Stroke Recovery"
     },
     {
-      name: "Mariyam Faisal",
-      location: "Kuttippuram, Kerala",
-      text: "My 6-year-old daughter has developmental motor delay. We couldn't afford expensive treatments at private hospitals. Care Village has been treating her for free, and we are seeing immense improvement in her stepping.",
-      textHindi: "എന്റെ 6 വയസ്സുള്ള മകൾക്ക് വളർച്ചാ വൈകല്യങ്ങൾ ഉണ്ടായിരുന്നു. വലിയ ആശുപത്രികളിലെ ചിലവ് ഞങ്ങൾക്ക് താങ്ങാൻ കഴിയുമായിരുന്നില്ല. കെയർ വില്ലേജിൽ ഇപ്പോൾ സൗജന്യമായാണ് ചികിത്സ നൽകുന്നത്. അവളുടെ നടത്തത്തിൽ വലിയ മാറ്റമുണ്ട്.",
+      name: "Amina",
+      location: "Kuttippuram, Malappuram",
+      text: "Severe knee pain made it impossible for me to stand or cook. The manual therapy and strengthening exercises provided by the dedicated team fully cured my knee stiffness.",
+      textHindi: "പ്രായാധിക്യം മൂലമുള്ള കടുത്ത കാൽമുട്ട് വേദന കാരണം എനിക്ക് നിൽക്കാനോ നടക്കാനോ കഴിഞ്ഞിരുന്നില്ല. ഇവിടെ ചെയ്ത വ്യായാമ ചികിത്സയും പരിചരണവും കാരണം എനിക്ക് പൂർണ്ണ ആശ്വാസം ലഭിച്ചു.",
       rating: 5,
       date: "28 April 2026",
-      condition: "CP Child Rehabilitation"
+      condition: "Joint Rehabilitation"
     },
     {
-      name: "V. Devadas",
-      location: "Ponnani, Kerala",
-      text: "I was suffering from chronic sciatica pain for 3 years. The electrotherapy and manual decompression stretches provided completely free of cost here completely cured my back stiffness. Highly professional setup!",
-      textHindi: "3 വർഷത്തോളമായി ഞാൻ കടുത്ത നട്ടെല്ല് വേദന (സയാറ്റിക്ക) അനുഭവിക്കുകയായിരുന്നു. ഇവിടെ നിന്ന് തികച്ചും സൗജന്യമായി ചെയ്ത ഇലക്ട്രോതെറാപ്പിയും കൺസൾട്ടേഷനും എന്നെ വേദനയിൽ നിന്ന് പൂർണ്ണമായും മോചിപ്പിച്ചു. മികച്ച സേവനം!",
+      name: "Mohammed CV",
+      location: "Ponnani, Malappuram",
+      text: "I was suffering from intense back stiffness and nerve compression for months. The electrotherapy and manual exercises offered here, completely free of charge, brought me back to my active life.",
+      textHindi: "മാസങ്ങളോളമായി ഞാൻ കടുത്ത നടുവേദനയും പേശി വലിവ് കൊണ്ടും ബുദ്ധിമുട്ടുകയായിരുന്നു. ഇവിടെ ചെയ്ത തികച്ചും സൗജന്യമായ ഇലക്ട്രോതെറാപ്പിയും പരിചരണവും എന്നെ പൂർണ്ണമായും വേഗത്തിൽ സുഖപ്പെടുത്തി.",
       rating: 5,
       date: "04 April 2026",
-      condition: "Sciatica Treatment"
+      condition: "Pain Management"
     }
   ];
 
@@ -295,11 +296,11 @@ export default function HomePage() {
               {language === "en" ? "Explore Services" : "സേവനങ്ങൾ കാണുക"}
             </a>
             <a
-              href="#contact"
-              className="w-full sm:w-auto h-13 px-8 rounded-xl border border-brand-light/30 bg-white/5 hover:bg-white/10 text-white font-bold text-sm tracking-wider uppercase flex items-center justify-center transition-all duration-500"
-              onMouseEnter={() => handleSpeech("Contact NGO")}
+              href="#donate"
+              className="w-full sm:w-auto h-13 px-8 rounded-xl border border-brand-light/30 bg-white/5 hover:bg-white/10 text-white font-bold text-sm tracking-wider uppercase flex items-center justify-center transition-all duration-500 hover:-translate-y-0.5 shadow-lg"
+              onMouseEnter={() => handleSpeech("Support & Donate")}
             >
-              {language === "en" ? "Contact NGO" : "സമ്പർക്കം"}
+              {language === "en" ? "Support & Donate" : "സംഭാവന നൽകുക"}
             </a>
           </div>
 
@@ -350,8 +351,8 @@ export default function HomePage() {
                 </p>
                 <p onMouseEnter={() => handleSpeech("Located near Salafi Masjid in Edappal, Kerala, we specialize in high-quality physical therapy and multi-disciplinary community support.")}>
                   {language === "en" 
-                    ? "Located near Salafi Masjid in Edappal, Kerala, the 'Care Village' rehabilitation wing offers comprehensive physical therapy completely free of cost to all patients in need. Our operations, modern equipment, and treatments are supported entirely by the compassionate contributions of our donors and well-wishers."
-                    : "എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന 'കെയർ വില്ലേജ്' ഫിസിയോതെറാപ്പി വിഭാഗത്തിൽ വരുന്ന എല്ലാ രോഗികൾക്കും തികച്ചും സൗജന്യമായാണ് ഞങ്ങൾ മികച്ച ചികിത്സകൾ നൽകുന്നത്. ഞങ്ങളുടെ പ്രവർത്തനങ്ങളും ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും പൂർണ്ണമായും കാരുണ്യമനസ്കരായ ആളുകളുടെ സംഭാവനകൾ വഴിയാണ് മുന്നോട്ട് പോകുന്നത്."}
+                    ? "Located near Salafi Masjid in Edappal, Kerala, the 'Care Village' rehabilitation wing offers comprehensive physical therapy completely free of cost to all patients in need. Our operations, modern equipment, and treatments are supported entirely by the compassionate contributions of our donors, well-wishers, and dedicated patrons like adil who stand by our community vision."
+                    : "എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന 'കെയർ വില്ലേജ്' ഫിസിയോതെറാപ്പി വിഭാഗത്തിൽ വരുന്ന എല്ലാ രോഗികൾക്കും തികച്ചും സൗജന്യമായാണ് ഞങ്ങൾ മികച്ച ചികിത്സകൾ നൽകുന്നത്. ഞങ്ങളുടെ പ്രവർത്തനങ്ങളും ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും പൂർണ്ണമായും കാരുണ്യമനസ്കരും adil പോലുള്ള ഞങ്ങളെ പിന്തുണയ്ക്കുന്നവരും നൽകുന്ന സംഭാവനകൾ വഴിയാണ് മുന്നോട്ട് പോകുന്നത്."}
                 </p>
               </div>
 
@@ -519,7 +520,156 @@ export default function HomePage() {
 
         </div>
 
-        {/* Elegant Wavy Section Divider (White to Light Background) */}
+        {/* Elegant Curved Section Divider at bottom of Services (Light to Dark Transition) */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px]" style={{ fill: "var(--background)" }}>
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.35,27.3,160,46.33,251.13,69.49,321.39,56.44Z"></path>
+          </svg>
+        </div>
+      </section>
+
+      {/* ================= SECTION 2B: CARE CHARITABLE TRUST CENTERPIECE ================= */}
+      <section id="donate" className="pt-24 pb-32 bg-brand-lightest scroll-mt-16 relative overflow-hidden reveal-on-scroll">
+        <div className="absolute top-0 right-0 h-96 w-96 bg-brand-light/30 rounded-full blur-3xl opacity-50 z-0 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 h-96 w-96 bg-brand-gray/10 rounded-full blur-3xl opacity-30 z-0 pointer-events-none" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-black uppercase tracking-widest text-brand-slate">
+              {language === "en" ? "Universal Free Rehabilitation" : "സുതാര്യമായ ധനസഹായ പദ്ധതി"}
+            </span>
+            <h2 
+              className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
+              onMouseEnter={() => handleSpeech("Care Charitable Trust")}
+            >
+              {language === "en" ? "Care Charitable Trust" : "കെയർ ചാരിറ്റബിൾ ട്രസ്റ്റ്"}
+            </h2>
+            <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
+              {language === "en"
+                ? "Care Village provides 100% free premium clinical care. Direct your generous charity to keep this noble work fully active and self-sustaining."
+                : "കെയർ വില്ലേജ് തികച്ചും സൗജന്യമായാണ് അത്യാധുനിക ചികിത്സകൾ നൽകുന്നത്. സദ്പ്രവർത്തികൾ തടസ്സമില്ലാതെ മുന്നോട്ട് കൊണ്ടുപോകാൻ സംഭാവന ചെയ്യൂ."}
+            </p>
+          </div>
+
+          {/* Federal Bank and UPI Information Block */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+            
+            {/* Left: Federal Bank Coordinates */}
+            <div className="lg:col-span-7 rounded-2xl border border-brand-light p-8 bg-white text-left flex flex-col justify-between shadow-xs">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 bg-brand-slate/10 text-brand-dark rounded-xl flex items-center justify-center">
+                    <ShieldCheck className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-black text-brand-dark">
+                      {language === "en" ? "Direct Bank Transfer" : "ബാങ്ക് അക്കൗണ്ട് വിവരങ്ങൾ"}
+                    </h3>
+                    <span className="text-[9px] font-black uppercase text-brand-slate tracking-widest block mt-0.5">
+                      {language === "en" ? "100% Tax-Exempt Audit Path" : "സുതാര്യമായ ഓഡിറ്റിംഗ്"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm border-t border-brand-light/60 pt-5">
+                  <div>
+                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Bank Name" : "ബാങ്ക്"}</span>
+                    <span className="font-bold text-brand-dark mt-0.5 block">Federal Bank</span>
+                  </div>
+                  <div>
+                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Branch" : "ബ്രാഞ്ച്"}</span>
+                    <span className="font-bold text-brand-dark mt-0.5 block">Edappal</span>
+                  </div>
+                  <div className="sm:col-span-2 border-t border-brand-light/45 pt-3">
+                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Account Name" : "അക്കൗണ്ട് നാമം"}</span>
+                    <span className="font-bold text-brand-dark mt-0.5 block">Care Charitable Trust</span>
+                  </div>
+                  <div className="border-t border-brand-light/45 pt-3">
+                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Account Number" : "അക്കൗണ്ട് നമ്പർ"}</span>
+                    <span className="font-mono font-bold text-brand-dark text-base mt-0.5 block tracking-wider">16970100034321</span>
+                  </div>
+                  <div className="border-t border-brand-light/45 pt-3">
+                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "IFSC Code" : "IFSC കോഡ്"}</span>
+                    <span className="font-mono font-bold text-brand-dark text-base mt-0.5 block tracking-wider">FDRL0001697</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-brand-light/60 flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => {
+                    const details = `Federal Bank\nBranch: Edappal\nAccount: Care Charitable Trust\nA/C No: 16970100034321\nIFSC: FDRL0001697`;
+                    navigator.clipboard.writeText(details);
+                    alert(language === "en" ? "Bank details copied to clipboard!" : "ബാങ്ക് അക്കൗണ്ട് വിവരങ്ങൾ കോപ്പി ചെയ്തു!");
+                  }}
+                  className="flex-1 h-11 rounded-xl border border-brand-slate/30 bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
+                >
+                  {language === "en" ? "Copy Account Details" : "വിവരങ്ങൾ കോപ്പി ചെയ്യാം"}
+                </button>
+              </div>
+            </div>
+
+            {/* Right: UPI Coordinates */}
+            <div className="lg:col-span-5 rounded-2xl border border-brand-light p-8 bg-brand-dark text-white text-left flex flex-col justify-between shadow-xs">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 bg-white/10 text-white rounded-xl flex items-center justify-center">
+                    <Heart className="h-5.5 w-5.5 text-brand-light fill-brand-light/10" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-black text-white">
+                      {language === "en" ? "Scan & Pay / UPI ID" : "യുപിഐ വിവരങ്ങൾ"}
+                    </h3>
+                    <span className="text-[9px] font-black uppercase text-brand-light tracking-widest block mt-0.5">
+                      {language === "en" ? "Instant Mobile Donations" : "മൊബൈൽ സംഭാവനകൾ"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-5 space-y-4">
+                  <div>
+                    <span className="text-brand-light text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Official UPI ID" : "യുപിഐ ഐഡി"}</span>
+                    <span className="font-mono font-bold text-white text-lg mt-1 block tracking-wide select-all">carecharity@upi</span>
+                  </div>
+                  <p className="text-xs text-brand-lightest leading-relaxed">
+                    {language === "en"
+                      ? "Transfer directly using any payment app (GPay, PhonePe, Paytm, BHIM) to our registered non-profit UPI handle."
+                      : "ഗൂഗിൾ പേ, ഫോൺ പേ, പേടിഎം തുടങ്ങിയ ഏത് ആപ്പ് വഴിയും ഞങ്ങളുടെ ഔദ്യോഗിക UPI ഐഡിയിലേക്ക് നേരിട്ട് പണം കൈമാറാം."}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText("carecharity@upi");
+                    alert(language === "en" ? "UPI ID copied to clipboard!" : "യുപിഐ ഐഡി കോപ്പി ചെയ്തു!");
+                  }}
+                  className="flex-1 h-11 rounded-xl bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                >
+                  {language === "en" ? "Copy UPI ID" : "യുപിഐ ഐഡി കോപ്പി ചെയ്യാം"}
+                </button>
+                <a
+                  href={`https://wa.me/${clinicConfig.whatsappNumber}?text=${encodeURIComponent(
+                    language === "en"
+                      ? "Hello, I have just made a donation using UPI. Please verify the receipt."
+                      : "നമസ്കാരം, ഞാൻ യുപിഐ വഴി ഒരു തുക സംഭാവന ചെയ്തിട്ടുണ്ട്. ദയവായി രസീത് പരിശോധിക്കുക."
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 h-11 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5"
+                >
+                  {language === "en" ? "Send Receipt" : "രസീത് അയക്കാം"}
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Elegant Curved Section Divider at bottom of Donate (Light to Dark Transition) */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
           <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px]" style={{ fill: "var(--background)" }}>
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.35,27.3,160,46.33,251.13,69.49,321.39,56.44Z"></path>
@@ -1014,60 +1164,115 @@ export default function HomePage() {
           
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-widest text-brand-slate">
-              {language === "en" ? "Licensed & Compassionate Experts" : "വിദഗ്ദ്ധരായ തെറാപ്പിസ്റ്റുകൾ"}
+              {language === "en" ? "Dedicated Personnel & Leaders" : "അംഗങ്ങൾ & ചികിത്സാ വിദഗ്ദ്ധർ"}
             </span>
             <h2 
               className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
               onMouseEnter={() => handleSpeech("Meet The Team")}
             >
-              {language === "en" ? "Meet Our Specialists" : "ഞങ്ങളുടെ ചികിത്സാ വിദഗ്ദ്ധർ"}
+              {language === "en" ? "Meet Our Specialists & Officers" : "ഞങ്ങളുടെ വിദഗ്ദ്ധരും ഭാരവാഹികളും"}
             </h2>
             <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Licensed clinical physiotherapists and volunteering medical consultants working hand-in-hand to restore your active independent livelihood."
-                : "അർഹരായ രോഗികൾക്ക് മികച്ച ചികിത്സ നൽകുന്നതിന് പ്രതിജ്ഞാബദ്ധരായ ഞങ്ങളുടെ രജിസ്റ്റർ ചെയ്ത ഫിസിയോതെറാപ്പിസ്റ്റുകളും ഉപദേശകരും."}
+                ? "Our certified therapists and trust management team working seamlessly to deliver absolute care."
+                : "അർഹരായ രോഗികൾക്ക് സൌജന്യ ചികിത്സയും പിന്തുണയും ലഭ്യമാക്കുന്ന ഞങ്ങളുടെ വിദഗ്ദ്ധരും ട്രസ്റ്റ് ഭാരവാഹികളും."}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {teamData.map((doc) => {
-              const dName = isMalayalam ? doc.nameHindi : doc.name;
-              const dRole = isMalayalam ? doc.roleHindi : doc.role;
+          {/* Clinical Faculty Sub-Grid */}
+          <div className="mb-16">
+            <h3 className="font-display text-2xl font-black text-brand-dark text-center mb-8 tracking-tight">
+              {language === "en" ? "Clinical Faculty" : "ചികിത്സാ വിദഗ്ദ്ധർ"}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {clinicalFaculty.map((doc) => {
+                const dName = isMalayalam ? doc.nameHindi : doc.name;
+                const dRole = isMalayalam ? doc.roleHindi : doc.role;
 
-              return (
-                <div 
-                  key={doc.id}
-                  className="rounded-2xl bg-white border border-brand-light p-6 hover-scale flex flex-col items-center text-center group"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="h-28 w-28 rounded-full border-3 border-brand-slate overflow-hidden mb-4 bg-brand-light/30 shrink-0 shadow-inner relative smooth-transition group-hover:border-brand-dark">
-                      {doc.imagePath ? (
-                        <img 
-                          src={doc.imagePath} 
-                          alt={doc.name} 
-                          className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center text-brand-gray bg-brand-lightest/40 uppercase font-black text-xl select-none">
-                          {doc.name.charAt(4)}
+                return (
+                  <div 
+                    key={doc.id}
+                    className="rounded-2xl bg-white border border-brand-light p-8 hover-scale flex flex-col items-center justify-between text-center group shadow-xs hover:shadow-md smooth-transition"
+                  >
+                    <div className="flex flex-col items-center w-full">
+                      <div className="h-28 w-28 rounded-full border-3 border-brand-slate overflow-hidden mb-4 bg-brand-light/30 shrink-0 shadow-inner relative smooth-transition group-hover:border-brand-dark">
+                        {doc.imagePath ? (
+                          <img 
+                            src={doc.imagePath} 
+                            alt={doc.name} 
+                            className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center text-brand-gray bg-brand-lightest/40 uppercase font-black text-xl select-none">
+                            {doc.name.charAt(4)}
+                          </div>
+                        )}
+                      </div>
+                      
+                      <h4 
+                        className="font-display font-black text-lg text-brand-dark group-hover:text-brand-slate transition-colors duration-300"
+                        onMouseEnter={() => handleSpeech(dName)}
+                      >
+                        {dName}
+                      </h4>
+
+                      <span className="text-xs font-bold uppercase text-brand-slate tracking-widest mt-1.5 block">
+                        {dRole}
+                      </span>
+                      
+                      {doc.phone && (
+                        <div className="mt-4 pt-3.5 border-t border-brand-light/60 w-full flex flex-col items-center">
+                          <span className="text-[10px] text-brand-slate uppercase font-black tracking-widest">
+                            {language === "en" ? "Direct Contact:" : "നേരിട്ടുള്ള ഫോൺ നമ്പർ:"}
+                          </span>
+                          <a 
+                            href={`tel:${doc.phone.replace(/\s+/g, '')}`}
+                            className="font-display font-black text-sm text-brand-dark mt-0.5 hover:text-brand-slate transition-colors tracking-wide"
+                          >
+                            {doc.phone}
+                          </a>
                         </div>
                       )}
                     </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
+          {/* Trust Committee Sub-Grid */}
+          <div>
+            <h3 className="font-display text-2xl font-black text-brand-dark text-center mb-8 tracking-tight">
+              {language === "en" ? "Trust Committee" : "കമ്മിറ്റി അംഗങ്ങൾ"}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {trustOfficers.map((officer) => {
+                const oName = isMalayalam ? officer.nameHindi : officer.name;
+                const oRole = isMalayalam ? officer.roleHindi : officer.role;
+
+                return (
+                  <div 
+                    key={officer.id}
+                    className="rounded-2xl bg-white border border-brand-light p-6 hover-scale flex flex-col items-center justify-center text-center group shadow-xs hover:shadow-md smooth-transition"
+                  >
+                    <div className="h-10 w-10 rounded-xl bg-brand-slate/5 text-brand-slate flex items-center justify-center mb-3">
+                      <ShieldCheck className="h-5 w-5" />
+                    </div>
+                    
                     <h4 
-                      className="font-display font-black text-base text-brand-dark group-hover:text-brand-slate transition-colors duration-300"
-                      onMouseEnter={() => handleSpeech(dName)}
+                      className="font-display font-bold text-sm text-brand-dark group-hover:text-brand-slate transition-colors duration-300 leading-snug"
+                      onMouseEnter={() => handleSpeech(oName)}
                     >
-                      {dName}
+                      {oName}
                     </h4>
 
-                    <span className="text-xs font-bold uppercase text-brand-slate tracking-widest mt-1.5 block">
-                      {dRole}
+                    <span className="text-[10px] font-black uppercase text-brand-slate tracking-widest mt-1.5 block">
+                      {oRole}
                     </span>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
         </div>

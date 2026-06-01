@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { useAccessibility } from "../context/AccessibilityContext";
 import { servicesData } from "../data/servicesData";
-import { teamData } from "../data/teamData";
+import { clinicalFaculty } from "../data/teamData";
 import { 
   X, 
   User, 
@@ -164,7 +164,7 @@ export default function AppointmentModal({ isOpen, onClose, preselectedServiceId
   if (!isOpen) return null;
 
   const selectedService = servicesData.find(s => s.id === formData.serviceId);
-  const selectedTherapist = teamData.find(t => t.id === formData.therapistId);
+  const selectedTherapist = clinicalFaculty.find(t => t.id === formData.therapistId);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in transition-colors duration-300">
@@ -295,7 +295,7 @@ export default function AppointmentModal({ isOpen, onClose, preselectedServiceId
                       className="mt-1 block w-full rounded-xl border border-border-color bg-stone-50 dark:bg-slate-800 px-3 py-2.5 text-sm text-stone-900 dark:text-white focus:border-teal-500 focus:outline-hidden"
                     >
                       <option value="first-available">⭐ {t.modalFirstAvailable}</option>
-                      {teamData.map((td) => (
+                      {clinicalFaculty.map((td) => (
                         <option key={td.id} value={td.id}>
                           {language === "en" ? td.name : td.nameHindi} ({language === "en" ? td.spec : td.specHindi})
                         </option>
