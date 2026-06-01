@@ -297,7 +297,7 @@ export default function AppointmentModal({ isOpen, onClose, preselectedServiceId
                       <option value="first-available">⭐ {t.modalFirstAvailable}</option>
                       {clinicalFaculty.map((td) => (
                         <option key={td.id} value={td.id}>
-                          {language === "en" ? td.name : td.nameHindi} ({language === "en" ? td.spec : td.specHindi})
+                          {language === "en" ? td.name : td.nameHindi} ({language === "en" ? td.role : td.roleHindi})
                         </option>
                       ))}
                     </select>
