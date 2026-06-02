@@ -552,119 +552,66 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Federal Bank and UPI Information Block */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
-            
-            {/* Left: Federal Bank Coordinates */}
-            <div className="lg:col-span-7 rounded-2xl border border-brand-light p-8 bg-white text-left flex flex-col justify-between shadow-xs">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 bg-brand-slate/10 text-brand-dark rounded-xl flex items-center justify-center">
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-black text-brand-dark">
-                      {language === "en" ? "Direct Bank Transfer" : "ബാങ്ക് അക്കൗണ്ട് വിവരങ്ങൾ"}
-                    </h3>
-                    <span className="text-[9px] font-black uppercase text-brand-slate tracking-widest block mt-0.5">
-                      {language === "en" ? "100% Tax-Exempt Audit Path" : "സുതാര്യമായ ഓഡിറ്റിംഗ്"}
-                    </span>
-                  </div>
+          {/* UPI and GPay Donation Information Centerpiece */}
+          <div className="max-w-2xl mx-auto">
+            <div className="rounded-3xl border border-brand-light p-8 md:p-10 bg-brand-dark text-white text-center flex flex-col items-center justify-between shadow-xl relative overflow-hidden">
+              {/* Subtle background glow */}
+              <div className="absolute top-0 right-0 h-48 w-48 bg-brand-light/10 rounded-full blur-3xl -translate-y-8 translate-x-8" />
+              
+              <div className="space-y-6 relative z-10 w-full flex flex-col items-center">
+                <div className="h-14 w-14 bg-white/10 text-white rounded-2xl flex items-center justify-center shadow-inner">
+                  <Heart className="h-7 w-7 text-brand-light fill-brand-light/10" />
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="font-display text-2xl font-black text-white">
+                    {language === "en" ? "GPay & UPI Donations" : "ജിപേ & യുപിഐ സംഭാവനകൾ"}
+                  </h3>
+                  <span className="text-[10px] font-black uppercase text-brand-light tracking-widest block">
+                    {language === "en" ? "Instant Mobile Transfer" : "മൊബൈൽ സംഭാവനകൾ"}
+                  </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm border-t border-brand-light/60 pt-5">
-                  <div>
-                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Bank Name" : "ബാങ്ക്"}</span>
-                    <span className="font-bold text-brand-dark mt-0.5 block">Federal Bank</span>
-                  </div>
-                  <div>
-                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Branch" : "ബ്രാഞ്ച്"}</span>
-                    <span className="font-bold text-brand-dark mt-0.5 block">Edappal</span>
-                  </div>
-                  <div className="sm:col-span-2 border-t border-brand-light/45 pt-3">
-                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Account Name" : "അക്കൗണ്ട് നാമം"}</span>
-                    <span className="font-bold text-brand-dark mt-0.5 block">Care Charitable Trust</span>
-                  </div>
-                  <div className="border-t border-brand-light/45 pt-3">
-                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Account Number" : "അക്കൗണ്ട് നമ്പർ"}</span>
-                    <span className="font-mono font-bold text-brand-dark text-base mt-0.5 block tracking-wider">16970100034321</span>
-                  </div>
-                  <div className="border-t border-brand-light/45 pt-3">
-                    <span className="text-brand-slate text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "IFSC Code" : "IFSC കോഡ്"}</span>
-                    <span className="font-mono font-bold text-brand-dark text-base mt-0.5 block tracking-wider">FDRL0001697</span>
-                  </div>
+                <div className="py-6 px-8 rounded-2xl bg-white/5 border border-white/10 w-full max-w-md">
+                  <span className="text-brand-light text-[10px] font-bold block uppercase tracking-wider mb-2">
+                    {language === "en" ? "GPay / PhonePe / UPI Number" : "ജിപേ / ഫോൺപേ / യുപിഐ നമ്പർ"}
+                  </span>
+                  <span className="font-display font-black text-white text-3xl sm:text-4xl tracking-wide select-all block">
+                    +91 8281 869769
+                  </span>
                 </div>
+
+                <p className="text-sm text-brand-lightest max-w-md mx-auto leading-relaxed">
+                  {language === "en"
+                    ? "Transfer directly using Google Pay, PhonePe, Paytm, or any BHIM UPI app to our registered mobile number."
+                    : "ഗൂഗിൾ പേ, ഫോൺ പേ, പേടിഎം തുടങ്ങിയ ഏത് ആപ്പ് വഴിയും ഞങ്ങളുടെ ഔദ്യോഗിക നമ്പറിലേക്ക് നേരിട്ട് പണം കൈമാറാം."}
+                </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-brand-light/60 flex flex-col sm:flex-row gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 items-stretch relative z-10 w-full max-w-md">
                 <button
                   onClick={() => {
-                    const details = `Federal Bank\nBranch: Edappal\nAccount: Care Charitable Trust\nA/C No: 16970100034321\nIFSC: FDRL0001697`;
-                    navigator.clipboard.writeText(details);
-                    alert(language === "en" ? "Bank details copied to clipboard!" : "ബാങ്ക് അക്കൗണ്ട് വിവരങ്ങൾ കോപ്പി ചെയ്തു!");
+                    navigator.clipboard.writeText("+91 8281 869769");
+                    alert(language === "en" ? "UPI number copied to clipboard!" : "യുപിഐ നമ്പർ കോപ്പി ചെയ്തു!");
                   }}
-                  className="flex-1 h-11 rounded-xl border border-brand-slate/30 bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
+                  className="flex-1 h-12 rounded-xl bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
                 >
-                  {language === "en" ? "Copy Account Details" : "വിവരങ്ങൾ കോപ്പി ചെയ്യാം"}
-                </button>
-              </div>
-            </div>
-
-            {/* Right: UPI Coordinates */}
-            <div className="lg:col-span-5 rounded-2xl border border-brand-light p-8 bg-brand-dark text-white text-left flex flex-col justify-between shadow-xs">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 bg-white/10 text-white rounded-xl flex items-center justify-center">
-                    <Heart className="h-5.5 w-5.5 text-brand-light fill-brand-light/10" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-lg font-black text-white">
-                      {language === "en" ? "Scan & Pay / UPI ID" : "യുപിഐ വിവരങ്ങൾ"}
-                    </h3>
-                    <span className="text-[9px] font-black uppercase text-brand-light tracking-widest block mt-0.5">
-                      {language === "en" ? "Instant Mobile Donations" : "മൊബൈൽ സംഭാവനകൾ"}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="border-t border-white/10 pt-5 space-y-4">
-                  <div>
-                    <span className="text-brand-light text-[10px] font-bold block uppercase tracking-wider">{language === "en" ? "Official UPI ID" : "യുപിഐ ഐഡി"}</span>
-                    <span className="font-mono font-bold text-white text-lg mt-1 block tracking-wide select-all">carecharity@upi</span>
-                  </div>
-                  <p className="text-xs text-brand-lightest leading-relaxed">
-                    {language === "en"
-                      ? "Transfer directly using any payment app (GPay, PhonePe, Paytm, BHIM) to our registered non-profit UPI handle."
-                      : "ഗൂഗിൾ പേ, ഫോൺ പേ, പേടിഎം തുടങ്ങിയ ഏത് ആപ്പ് വഴിയും ഞങ്ങളുടെ ഔദ്യോഗിക UPI ഐഡിയിലേക്ക് നേരിട്ട് പണം കൈമാറാം."}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => {
-                    navigator.clipboard.writeText("carecharity@upi");
-                    alert(language === "en" ? "UPI ID copied to clipboard!" : "യുപിഐ ഐഡി കോപ്പി ചെയ്തു!");
-                  }}
-                  className="flex-1 h-11 rounded-xl bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
-                >
-                  {language === "en" ? "Copy UPI ID" : "യുപിഐ ഐഡി കോപ്പി ചെയ്യാം"}
+                  {language === "en" ? "Copy UPI Number" : "നമ്പർ കോപ്പി ചെയ്യാം"}
                 </button>
                 <a
                   href={`https://wa.me/${clinicConfig.whatsappNumber}?text=${encodeURIComponent(
                     language === "en"
-                      ? "Hello, I have just made a donation using UPI. Please verify the receipt."
-                      : "നമസ്കാരം, ഞാൻ യുപിഐ വഴി ഒരു തുക സംഭാവന ചെയ്തിട്ടുണ്ട്. ദയവായി രസീത് പരിശോധിക്കുക."
+                      ? "Hello, I have made a donation to Care Charitable Trust. Please verify the receipt."
+                      : "നമസ്കാരം, കെയർ ചാരിറ്റബിൾ ട്രസ്റ്റിലേക്ക് ഞാൻ ഒരു തുക സംഭാവന ചെയ്തിട്ടുണ്ട്. ദയവായി രസീത് പരിശോധിക്കുക."
                   )}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 h-11 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5"
+                  className="flex-1 h-12 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-wider smooth-transition flex items-center justify-center gap-1.5"
                 >
                   {language === "en" ? "Send Receipt" : "രസീത് അയക്കാം"}
                 </a>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -1022,26 +969,9 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs leading-normal">
-                    <div className="text-left col-span-2">
-                      <span className="text-brand-slate block text-[10px] font-bold">{language === "en" ? "GPay / PhonePe Number" : "ജിപേ / ഫോൺപേ നമ്പർ"}</span>
-                      <span className="font-display font-black text-base text-brand-dark tracking-wide block">+91 8281 869769</span>
-                    </div>
-                    <div className="text-left col-span-2 border-t border-brand-light/40 pt-2.5 flex items-center justify-between gap-1.5">
-                      <div>
-                        <span className="text-brand-slate block text-[10px] font-bold">{language === "en" ? "UPI ID" : "യുപിഐ ഐഡി"}</span>
-                        <span className="font-mono font-bold text-brand-dark block text-xs tracking-wide">8281869769@okaxis</span>
-                      </div>
-                      <button
-                        onClick={() => {
-                          navigator.clipboard.writeText("8281869769@okaxis");
-                          alert(language === "en" ? "UPI ID Copied!" : "യുപിഐ ഐഡി കോപ്പി ചെയ്തു!");
-                        }}
-                        className="text-[9px] font-black text-brand-dark hover:underline uppercase shrink-0 pt-3.5 cursor-pointer"
-                      >
-                        {language === "en" ? "Copy ID" : "കോപ്പി ചെയ്യാം"}
-                      </button>
-                    </div>
+                  <div className="text-left">
+                    <span className="text-brand-slate block text-[10px] font-bold">{language === "en" ? "GPay / PhonePe / UPI Number" : "ജിപേ / ഫോൺപേ / യുപിഐ നമ്പർ"}</span>
+                    <span className="font-display font-black text-base text-brand-dark tracking-wide block mt-1">+91 8281 869769</span>
                   </div>
                 </div>
               </div>
@@ -1050,13 +980,12 @@ export default function HomePage() {
               <div className="mt-8 flex flex-col sm:flex-row gap-3 items-stretch relative z-10 w-full pt-4 border-t border-brand-light/40">
                 <button
                   onClick={() => {
-                    const details = `CARE CHARITABLE TRUST\nGPay / PhonePe: +91 8281 869769\nUPI ID: 8281869769@okaxis`;
-                    navigator.clipboard.writeText(details);
-                    alert(language === "en" ? "GPay Details Copied to Clipboard!" : "ജിപേ വിവരങ്ങൾ കോപ്പി ചെയ്തു!");
+                    navigator.clipboard.writeText("+91 8281 869769");
+                    alert(language === "en" ? "UPI number copied to clipboard!" : "യുപിഐ നമ്പർ കോപ്പി ചെയ്തു!");
                   }}
                   className="flex-1 h-12 rounded-xl border border-brand-slate/30 bg-white hover:bg-brand-lightest text-brand-dark text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-sm active:scale-95 cursor-pointer"
                 >
-                  {language === "en" ? "Copy Details" : "വിവരങ്ങൾ കോപ്പി ചെയ്യാം"}
+                  {language === "en" ? "Copy UPI Number" : "നമ്പർ കോപ്പി ചെയ്യാം"}
                 </button>
                 <a
                   href={`https://wa.me/${clinicConfig.whatsappNumber}?text=${encodeURIComponent(
