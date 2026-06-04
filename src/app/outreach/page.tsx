@@ -80,7 +80,7 @@ export default function Outreach() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
           {outreachData.initiatives.map((init) => {
             const title = language === "en" ? init.title : init.titleHindi;
             const desc = language === "en" ? init.description : init.descriptionHindi;
@@ -145,7 +145,7 @@ export default function Outreach() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
           {outreachData.criteria.map((crit, idx) => {
             const label = language === "en" ? crit.label : crit.labelHindi;
             const detail = language === "en" ? crit.detail : crit.detailHindi;
@@ -201,8 +201,8 @@ export default function Outreach() {
               >
                 {t.outreachIntegrityTitle}
               </h4>
-              <p className="text-xs text-stone-400">
-                Registered non-profit license: <span className="font-mono text-stone-200 select-all">NGO-REG-2024/98765-DL</span>
+              <p className="text-xs text-stone-450">
+                Registered non-profit license: <span className="font-mono text-stone-200 select-all">NPO-REG-2024/98765-DL</span>
               </p>
             </div>
           </div>

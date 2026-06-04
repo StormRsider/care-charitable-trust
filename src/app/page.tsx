@@ -121,7 +121,8 @@ export default function HomePage() {
       description: "Essential for restoring walking confidence. Designed for gait training, weight-shifting exercises, and posture correction in stroke, neurological, and post-surgery rehabilitation.",
       descriptionHindi: "സ്ട്രോക്ക്, തളർവാതം, ഓർത്തോപീഡിക് സർജറി എന്നിവയ്ക്ക് ശേഷം രോഗികളുടെ നടത്തം സുഗമമാക്കാനും സന്തുലിതാവസ്ഥ വീണ്ടെടുക്കാനുമുള്ള പാരലൽ ബാർ അസിസ്റ്റഡ് ഗെയ്റ്റ് ട്രെയിനിംഗ്.",
       useCase: "Gait Retraining & Lower Limb Mobilization",
-      useCaseHindi: "നടത്ത പരിശീലനവും ചലനശേഷി വീണ്ടെടുക്കലും"
+      useCaseHindi: "നടത്ത പരിശീലനവും ചലനശേഷി വീണ്ടെടുക്കലും",
+      image: "/ParallelPIC.jpeg"
     },
     {
       title: "Therapy Beds",
@@ -129,7 +130,8 @@ export default function HomePage() {
       description: "Height-adjustable, heavily cushioned ergonomic platforms built for focused manual therapy, passive joint stretches, and osteopathic alignments in high comfort.",
       descriptionHindi: "രോഗികൾക്ക് മികച്ച കിടപ്പ് സൗകര്യം നൽകിക്കൊണ്ട് സന്ധികൾ ചലിപ്പിക്കാനും മാനുവൽ ഫിസിയോതെറാപ്പി നൽകാനുമുള്ള ഉയരം ക്രമീകരിക്കാവുന്ന അത്യാധുനിക തെറാപ്പി ബെഡ്ഡുകൾ.",
       useCase: "Manual Joint Mobilization & Stretches",
-      useCaseHindi: "മാനുവൽ ജോയിന്റ് മൊബിലൈസേഷൻ & സ്ട്രെച്ചിംഗ്"
+      useCaseHindi: "മാനുവൽ ജോയിന്റ് മൊബിലൈസേഷൻ & സ്ട്രെച്ചിംഗ്",
+      image: "/Bedpic.jpeg"
     },
     {
       title: "TENS Machine",
@@ -137,7 +139,8 @@ export default function HomePage() {
       description: "Transcutaneous Electrical Nerve Stimulation units that dispatch mild electrical currents to disrupt pain signals, instantly relaxing deep muscle fibers.",
       descriptionHindi: "വേദനയുടെ സിഗ്നലുകളെ തടഞ്ഞുകൊണ്ട് പേശികൾക്ക് വേഗത്തിൽ ആശ്വാസം നൽകുന്ന അത്യാധുനിക അൾട്രാസൗണ്ട്/TENS വൈദ്യുത തരംഗ വേദന സംഹാരി യൂണിറ്റുകൾ.",
       useCase: "Non-Invasive Pain Relief & Muscle Relaxation",
-      useCaseHindi: "പാർശ്വഫലങ്ങളില്ലാത്ത വേദന നിവാരണവും മസിൽ റിലാക്സേഷനും"
+      useCaseHindi: "പാർശ്വഫലങ്ങളില്ലാത്ത വേദന നിവാരണവും മസിൽ റിലാക്സേഷനും",
+      image: "/TENSpic.jpeg"
     },
     {
       title: "Exercise Equipment",
@@ -145,53 +148,41 @@ export default function HomePage() {
       description: "A wide deck of rehabilitation equipment including resistance therabands, gym balls, finger pulleys, and dumbbells tailored to build muscular endurance.",
       descriptionHindi: "പേശീബലവും വഴക്കവും വർദ്ധിപ്പിക്കുന്നതിനുള്ള തെറാബാൻഡ് റബ്ബർ വലിപ്പുകൾ, ജിം ബോൾ, ഫിംഗർ പുലി, ഡംബെല്ലുകൾ എന്നിവയടങ്ങുന്ന വിപുലമായ വ്യായാമ വിഭാഗം.",
       useCase: "Stretching, Conditioning & Strength Training",
-      useCaseHindi: "സ്ട്രെച്ചിംഗ്, പേശിബലം & വ്യായാമം"
+      useCaseHindi: "സ്ട്രെച്ചിംഗ്, പേശിബലം & വ്യായാമം",
+      image: "/GYMPIC.jpeg"
     },
     {
-      title: "Robotic Rehabilitation Glove",
-      titleHindi: "റോബോട്ടിക് റീഹാബിലിറ്റേഷൻ ഗ്ലൗസ് (Robotic Glove)",
-      description: "Innovative pneumatic glove technology that assists hemiplegic and hand-paralysis patients in performing gripping exercises and retraining hand-eye coordination.",
-      descriptionHindi: "പക്ഷാഘാതം മൂലം കൈ വിരലുകൾ ചലിപ്പിക്കാൻ പ്രയാസപ്പെടുന്ന രോഗികൾക്ക് വിരലുകൾ മടക്കാനും വസ്തുക്കൾ പിടിക്കാനും സഹായിക്കുന്ന അത്യാധുനിക റോബോട്ടിക് ഗ്ലൗസ് തെറാപ്പി.",
-      useCase: "Neuro-Muscular Hand & Finger Retraining",
-      useCaseHindi: "വിരലുകളുടെ ചലനശേഷിയും ഏകോപനവും വീണ്ടെടുക്കൽ"
-    },
-    {
-      title: "Walking Support Systems",
-      titleHindi: "നടത്ത സഹായ സംവിധാനങ്ങൾ (Walking Supports)",
-      description: "Standard folding walkers, heavy-duty quad canes, and specialized pediatric stepping frames constructed to offer active mechanical support during early mobility recovery.",
-      descriptionHindi: "പ്രസിദ്ധമായ നടത്തം സുരക്ഷിതമാക്കാൻ ഉപയോഗിക്കുന്ന വാക്കറുകൾ, ഹെവി ക്വാഡ് വാക്കിങ് സ്റ്റിക്കുകൾ, കുട്ടികൾക്കായുള്ള പ്രത്യേക സ്റ്റെപ്പിംഗ് ഫ്രെയിമുകൾ.",
-      useCase: "Fall-Prevention & Supported Mobilization",
-      useCaseHindi: "വീഴ്ച ഒഴിവാക്കലും സുരക്ഷിതമായ നടത്തവും"
+      title: "Treadmill",
+      titleHindi: "ട്രെഡ്മിൽ (Treadmill)",
+      description: "Professional motorized therapy treadmill customized for progressive walking exercise, cardiovascular endurance, and supported gait retraining under clinical supervision.",
+      descriptionHindi: "ഹൃദയാരോഗ്യവും ശ്വാസകോശ ശേഷിയും വർദ്ധിപ്പിക്കുന്നതിനും, പക്ഷാഘാത രോഗികളുടെയും സന്ധിവാതമുള്ളവരുടെയും നടത്തം സുഗമമാക്കുന്നതിനുമുള്ള അത്യാധുനിക തെറാപ്പി ട്രെഡ്മിൽ.",
+      useCase: "Supported Cardio Conditioning & Progressive Gait Training",
+      useCaseHindi: "ശരീര ചലനശേഷിയും നടത്ത പരിശീലനവും മെച്ചപ്പെടുത്തൽ",
+      image: "/Treadpic.jpeg"
     }
   ];
 
   const galleryItems = [
     {
-      url: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+      url: "/Gallery1.jpeg",
       title: "Modern Clinical Environment",
       titleHindi: "ആധുനിക ക്ലിനിക്കൽ പരിസ്ഥിതി",
       desc: "Our clean, bright, and state-of-the-art physiotherapy room in Edappal."
     },
     {
-      url: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80",
+      url: "/Gallery2.jpeg",
       title: "Focused Manual Mobilization",
       titleHindi: "മാനുവൽ ഫിസിയോതെറാപ്പി പരിചരണം",
       desc: "Therapists providing precise, unhurried, and dedicated manual joint stretches."
     },
     {
-      url: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80",
-      title: "Pediatric Rehabilitation",
-      titleHindi: "കുട്ടികൾക്കായുള്ള ചികിത്സകൾ",
-      desc: "Empathetic, play-focused developmental drills sponsored fully by the trust."
-    },
-    {
-      url: "https://images.unsplash.com/photo-1579684389782-64d84b5e901d?auto=format&fit=crop&w=800&q=80",
+      url: "/Gallery3.jpeg",
       title: "Advanced Electrotherapy Unit",
       titleHindi: "അത്യാധുനിക ഇലക്ട്രോതെറാപ്പി বিভাগം",
       desc: "Safe and subsidized modalities to treat inflammation and nerve injuries."
     },
     {
-      url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
+      url: "/Gallery4.jpeg",
       title: "Community Welfare Outreach",
       titleHindi: "കമ്മ്യൂണിറ്റി വെൽഫെയർ ഔട്ട്രീച്ച്",
       desc: "Delivering mobility support, aid distribution, and free diagnostics to rural communities."
@@ -416,7 +407,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <span className="text-[9px] bg-green-50 text-green-700 font-bold border border-green-200/40 px-2.5 py-0.5 rounded-full uppercase">
-                      Active NGO
+                      Active NPO
                     </span>
                   </div>
 
@@ -784,44 +775,63 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-8">
-              <div className="h-full rounded-2xl border border-brand-light p-8 md:p-10 bg-background relative overflow-hidden flex flex-col justify-between min-h-[360px] shadow-sm smooth-transition hover:border-brand-slate/40 hover:shadow-md">
+              <div className="h-full rounded-2xl border border-brand-light p-6 md:p-8 bg-background relative overflow-hidden shadow-sm smooth-transition hover:border-brand-slate/40 hover:shadow-md">
                 <div className="absolute top-0 right-0 h-40 w-40 bg-brand-slate/5 rounded-full blur-2xl -translate-y-6 translate-x-6" />
                 
-                <div className="space-y-6 relative z-10 text-left">
-                  <div className="flex items-center gap-3">
-                    <div className="h-9 w-9 rounded-lg bg-brand-dark text-white flex items-center justify-center shadow-md">
-                      <Activity className="h-5 w-5 text-brand-light" />
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch relative z-10 h-full">
+                  
+                  {/* Left Column: Text & Details */}
+                  <div className="md:col-span-7 flex flex-col justify-between space-y-6 text-left">
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-9 w-9 rounded-lg bg-brand-dark text-white flex items-center justify-center shadow-md shrink-0">
+                          <Activity className="h-5 w-5 text-brand-light" />
+                        </div>
+                        <div>
+                          <h3 className="font-display text-xl sm:text-2xl font-black text-brand-dark">
+                            {language === "en" ? facilities[activeFacility].title : facilities[activeFacility].titleHindi}
+                          </h3>
+                          <span className="text-[10px] font-black uppercase text-brand-slate tracking-widest mt-0.5 block">
+                            {language === "en" ? "Standard Clinical Modality" : "ഉപകരണ വിവരണം"}
+                          </span>
+                        </div>
+                      </div>
+
+                      <p 
+                        className="text-sm sm:text-base text-brand-slate leading-relaxed"
+                        onMouseEnter={() => handleSpeech(language === "en" ? facilities[activeFacility].description : facilities[activeFacility].descriptionHindi)}
+                      >
+                        {language === "en" ? facilities[activeFacility].description : facilities[activeFacility].descriptionHindi}
+                      </p>
                     </div>
-                    <div>
-                      <h3 className="font-display text-2xl font-black text-brand-dark">
-                        {language === "en" ? facilities[activeFacility].title : facilities[activeFacility].titleHindi}
-                      </h3>
-                      <span className="text-xs font-black uppercase text-brand-slate tracking-widest mt-1 block">
-                        {language === "en" ? "Standard Clinical Modality" : "ഉപകരണ വിവരണം"}
+
+                    <div className="pt-4 border-t border-brand-light/60 flex flex-col gap-3">
+                      <div className="flex flex-col text-left">
+                        <span className="text-[10px] text-brand-slate uppercase font-black tracking-widest leading-none">{language === "en" ? "Clinical Indication:" : "പ്രധാന ഉപയോഗം:"}</span>
+                        <span className="text-xs sm:text-sm font-black text-brand-dark mt-1">
+                          {language === "en" ? facilities[activeFacility].useCase : facilities[activeFacility].useCaseHindi}
+                        </span>
+                      </div>
+                      
+                      <span className="inline-flex w-fit h-8 items-center gap-1.5 rounded-lg bg-brand-light border border-brand-light/65 px-3 text-[10px] sm:text-xs font-bold text-brand-dark">
+                        <ShieldCheck className="h-3.5 w-3.5" />
+                        <span>{language === "en" ? "100% Free of Cost" : "പൂർണ്ണമായും സൗജന്യ ചികിത്സ"}</span>
                       </span>
                     </div>
+
                   </div>
 
-                  <p 
-                    className="text-base text-brand-slate leading-relaxed max-w-3xl"
-                    onMouseEnter={() => handleSpeech(language === "en" ? facilities[activeFacility].description : facilities[activeFacility].descriptionHindi)}
-                  >
-                    {language === "en" ? facilities[activeFacility].description : facilities[activeFacility].descriptionHindi}
-                  </p>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-brand-light/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-                  <div className="flex flex-col text-left">
-                    <span className="text-[10px] text-brand-slate uppercase font-black tracking-widest">{language === "en" ? "Clinical Indication:" : "പ്രധാന ഉപയോഗം:"}</span>
-                    <span className="text-sm font-black text-brand-dark mt-0.5">
-                      {language === "en" ? facilities[activeFacility].useCase : facilities[activeFacility].useCaseHindi}
-                    </span>
+                  {/* Right Column: Equipment Image */}
+                  <div className="md:col-span-5 relative rounded-2xl overflow-hidden border border-brand-light/60 bg-brand-lightest aspect-4/3 md:aspect-auto min-h-[180px] md:min-h-full group/image shadow-xs">
+                    <img 
+                      src={facilities[activeFacility].image} 
+                      alt={language === "en" ? facilities[activeFacility].title : facilities[activeFacility].titleHindi}
+                      className="absolute inset-0 h-full w-full object-cover group-hover/image:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                   </div>
-                  
-                  <span className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-brand-light border border-brand-light/65 px-4 text-xs font-bold text-brand-dark">
-                    <ShieldCheck className="h-4 w-4" />
-                    <span>{language === "en" ? "100% Free of Cost" : "പൂർണ്ണമായും സൗജന്യ ചികിത്സ"}</span>
-                  </span>
+
                 </div>
 
               </div>
@@ -845,7 +855,7 @@ export default function HomePage() {
           
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
             <span className="text-xs font-black uppercase tracking-widest text-brand-slate">
-              {language === "en" ? "NGO Transparency & Trust" : "സുതാര്യതയും കമ്മ്യൂണിറ്റി പിന്തുണയും"}
+              {language === "en" ? "NPO Transparency & Trust" : "സുതാര്യതയും കമ്മ്യൂണിറ്റി പിന്തുണയും"}
             </span>
             <h2 
               className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
@@ -916,8 +926,8 @@ export default function HomePage() {
               {/* Item 4 - Wide Span */}
               <div className="col-span-2 relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-16/9 shadow-sm hover:shadow-md transition-shadow">
                 <img 
-                  src={galleryItems[4].url} 
-                  alt={galleryItems[4].title}
+                  src={galleryItems[3].url} 
+                  alt={galleryItems[3].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
@@ -926,7 +936,7 @@ export default function HomePage() {
                     {language === "en" ? "Outreach" : "ഔട്ട്രീച്ച്"}
                   </span>
                   <h4 className="font-display font-black text-sm sm:text-base text-white mt-2 leading-tight">
-                    {isMalayalam ? galleryItems[4].titleHindi : galleryItems[4].title}
+                    {isMalayalam ? galleryItems[3].titleHindi : galleryItems[3].title}
                   </h4>
                 </div>
               </div>
@@ -1003,7 +1013,7 @@ export default function HomePage() {
 
               <div className="mt-6 pt-3 border-t border-dashed border-brand-light flex justify-between items-center text-[10px] text-brand-slate font-bold relative z-10">
                 <span>{language === "en" ? "Charitable Trust Reg No:" : "ചാരിറ്റബിൾ ട്രസ്റ്റ് രജിസ്റ്റർ നമ്പർ:"}</span>
-                <span className="text-brand-dark">{clinicConfig.ngoRegNumber}</span>
+                <span className="text-brand-dark">{clinicConfig.npoRegNumber}</span>
               </div>
             </div>
 
@@ -1243,7 +1253,7 @@ export default function HomePage() {
                 <div className="flex items-start gap-3.5 text-sm">
                   <MapPin className="h-5 w-5 text-brand-slate shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-brand-dark block">{language === "en" ? "Registered NGO Address" : "രജിസ്റ്റർ ചെയ്ത വിലാസം"}</span>
+                    <span className="font-bold text-brand-dark block">{language === "en" ? "Registered NPO Address" : "രജിസ്റ്റർ ചെയ്ത വിലാസം"}</span>
                     <span className="text-brand-slate text-xs mt-1 block leading-relaxed">{clinicConfig.address}</span>
                   </div>
                 </div>

@@ -192,9 +192,6 @@ export default function Contact() {
                   >
                     {clinicConfig.address}
                   </p>
-                  <p className="text-[10px] text-stone-400">
-                    Dwarka Sector 12, Dwarka Metro Station Corridor
-                  </p>
                 </div>
               </div>
 
@@ -294,7 +291,7 @@ export default function Contact() {
                         className="w-full h-11 px-4.5 rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs font-semibold focus:border-teal-500 dark:focus:border-teal-400 outline-none transition-colors text-stone-850 dark:text-white"
                       >
                         <option value="general">{language === "en" ? "General Inquiry" : "सामान्य पूछताछ"}</option>
-                        <option value="bpl-free">{language === "en" ? "NGO BPL Free Scheme" : "मुफ्त इलाज योजना पात्रता"}</option>
+                        <option value="bpl-free">{language === "en" ? "NPO BPL Free Scheme" : "NPO ബിപിഎൽ സൗജന്യ പദ്ധതി"}</option>
                         {servicesData.map(s => (
                           <option key={s.id} value={s.id}>
                             {language === "en" ? s.title : s.titleHindi}

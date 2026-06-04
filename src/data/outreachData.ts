@@ -73,17 +73,6 @@ export const outreachData: OutreachData = {
       scheduleHindi: "साप्ताहिक रूप से सक्रिय (मंगलवार और शुक्रवार)",
       impactLabel: "82 homebound stroke patients rehabilitated",
       impactLabelHindi: "82 घर से बाहर न जा पाने वाले स्ट्रोक रोगियों का इलाज"
-    },
-    {
-      id: "government-school-ergonomics",
-      title: "Government School Spinal Screening",
-      titleHindi: "सरकारी स्कूल रीढ़ की हड्डी जांच अभियान",
-      description: "School children carry heavy backpacks which can lead to permanent spinal alignment issues. Our pediatric specialists screen kids for scoliosis and posture anomalies while educating teachers on active exercises.",
-      descriptionHindi: "स्कूली बच्चे भारी बस्ते ले जाते हैं जिससे रीढ़ की हड्डी में स्थायी समस्या हो सकती है। हमारे विशेषज्ञ बच्चों की जांच करते हैं और शिक्षकों को बुनियादी अभ्यासों के प्रति जागरूक करते हैं।",
-      schedule: "Bi-monthly school drives during session terms",
-      scheduleHindi: "सत्र के दौरान हर दो महीने में एक बार आयोजित",
-      impactLabel: "3,200+ students screened & educated",
-      impactLabelHindi: "3,200+ छात्रों की जांच और जागरूकता"
     }
   ],
   criteria: [
@@ -98,12 +87,6 @@ export const outreachData: OutreachData = {
       labelHindi: "सरकारी पेंशनर / संकटग्रस्त वरिष्ठ नागरिक",
       detail: "Elderly patients living in community old-age shelters or who do not have familial support receive immediate, zero-charge mobility assistance.",
       detailHindi: "सामुदायिक वृद्धाश्रमों में रहने वाले या पारिवारिक सहायता से वंचित बुजुर्ग रोगियों को तत्काल, बिना किसी शुल्क के फिजियोथेरेपी सहायता दी जाती है।"
-    },
-    {
-      label: "Orphaned Children & Differently-Abled Youth",
-      labelHindi: "अनाथ बच्चे और दिव्यांग युवा",
-      detail: "All pediatric treatments for neurological delays and joint adjustments for differently-abled youngsters are fully sponsored under Care Charitable Trust Special Children Fund.",
-      detailHindi: "दिव्यांग बच्चों और अनाथ बच्चों के लिए सभी बाल चिकित्सा और जोड़ों की थेरेपी को केयर ट्रस्ट स्पेशल चिल्ड्रन फंड के तहत पूरी तरह प्रायोजित किया जाता है।"
     }
   ]
 };

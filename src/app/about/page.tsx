@@ -16,15 +16,15 @@ export default function About() {
   };
 
   const timelineEvents = language === "en" ? [
-    { year: "2018", title: "NGO Foundation", desc: "Care Charitable Trust was registered as a non-profit NGO with a focus on grassroots health checkups in Delhi NCR." },
+    { year: "2018", title: "NPO Foundation", desc: "Care Charitable Trust was registered as a non-profit NPO with a focus on grassroots health checkups in Kerala." },
     { year: "2020", title: "COVID Relief Response", desc: "Distributed oxygen concentrators, medical supplies, and launched telemedicine services for remote families during the height of the pandemic." },
-    { year: "2022", title: "Dedicated Physiotherapy Wing", desc: "Recognizing high post-viral joint issues and stroke rehabilitation neglect, we opened our dedicated Dwarka clinic with 3 beds." },
+    { year: "2022", title: "Dedicated Physiotherapy Wing", desc: "Recognizing high post-viral joint issues and stroke rehabilitation neglect, we opened our dedicated Edappal clinic with 3 beds." },
     { year: "2024", title: "Subsidized Electrotherapy Expansion", desc: "Upgraded our clinic with professional imported SWD, IFT, and CPM machines, expanding our capacity to serve 40+ patients daily." },
     { year: "2026", title: "Mobile Rehabilitation Initiative", desc: "Launched our first mobile medical van to take clinical neuro-rehabilitation directly to rural bended stroke patients." }
   ] : [
-    { year: "2018", title: "एनजीओ की स्थापना", desc: "केयर चैरिटेबल ट्रस्ट को दिल्ली एनसीआर में जमीनी स्तर पर स्वास्थ्य जांच पर ध्यान केंद्रित करने वाले एक गैर-लाभकारी एनजीओ के रूप में पंजीकृत किया गया था।" },
+    { year: "2018", title: "एनपीओ की स्थापना", desc: "केयर चैरिटेबल ट्रस्ट को केरल में जमीनी स्तर पर स्वास्थ्य जांच पर ध्यान केंद्रित करने वाले एक गैर-लाभकारी एनपीओ के रूप में पंजीकृत किया गया था।" },
     { year: "2020", title: "कोविड राहत प्रतिक्रिया", desc: "महामारी के चरम के दौरान ऑक्सीजन कंसंट्रेटर, चिकित्सा आपूर्ति वितरित की और दूरदराज के परिवारों के लिए टेलीमेडिसिन सेवाएं शुरू कीं।" },
-    { year: "2022", title: "समर्पित फिजियोथेरेपी विंग", desc: "वायरल के बाद जोड़ों की समस्याओं और पक्षाघात पुनर्वास की उपेक्षा को देखते हुए, हमने द्वारका में 3 बिस्तरों का क्लिनिक खोला।" },
+    { year: "2022", title: "समर्पित फिजियोथेरेपी विंग", desc: "वायरल के बाद जोड़ों की समस्याओं और पक्षाघात पुनर्वास की उपेक्षा को देखते हुए, हमने एडाप्पल में 3 बिस्तरों का क्लिनिक खोला।" },
     { year: "2024", title: "रियायती इलेक्ट्रोथेरेपी विस्तार", desc: "पेशेवर आयातित SWD, IFT और CPM मशीनों के साथ क्लिनिक को अपग्रेड किया, जिससे दैनिक 40+ रोगियों की सेवा करने की क्षमता का विस्तार हुआ।" },
     { year: "2026", title: "मोबाइल पुनर्वास पहल", desc: "ग्रामीण क्षेत्रों में घर पर पड़े लकवा रोगियों तक सीधे क्लिनिकल न्यूरो-पुनर्वास पहुंचाने के लिए पहली मोबाइल मेडिकल वैन शुरू की।" }
   ];
@@ -136,11 +136,11 @@ export default function About() {
                   </div>
                   <div>
                     <h5 className="text-xs font-bold text-stone-900 dark:text-white">
-                      {language === "en" ? "100% Ethical & Audited NGO" : "100% സുതാര്യവും ഓഡിറ്റ് ചെയ്യപ്പെട്ടതുമായ NGO"}
+                      {language === "en" ? "100% Ethical & Audited NPO" : "100% സുതാര്യവും ഓഡിറ്റ് ചെയ്യപ്പെട്ടതുമായ NPO"}
                     </h5>
                     <p className="text-xs text-stone-400 mt-0.5">
                       {language === "en" 
-                        ? `Operating under NGO license: ${clinicConfig.ngoRegNumber}. Regular audits published annually.`
+                        ? `Operating under NPO license: ${clinicConfig.npoRegNumber}. Regular audits published annually.`
                         : `ഒരു ചാരിറ്റബിൾ ട്രസ്റ്റിന് കീഴിൽ പ്രവർത്തിക്കുന്ന ഞങ്ങളുടെ സ്ഥാപനം പൂർണ്ണമായും സുതാര്യമാണ്. വാർഷിക ഓഡിറ്റ് വിവരങ്ങൾ ലഭ്യമാണ്.`}
                     </p>
                   </div>
@@ -172,7 +172,7 @@ export default function About() {
                 </p>
 
                 <div className="relative border-t border-stone-800 pt-4 flex items-center justify-between text-[11px] font-bold text-stone-400">
-                  <span>{language === "en" ? "Dwarka Community Service" : "द्वारका सामुदायिक सेवा"}</span>
+                  <span>{language === "en" ? "Edappal Community Service" : "एडाप्पल सामुदायिक सेवा"}</span>
                   <span className="text-teal-400">🟢 {language === "en" ? "Subsidized Clinic" : "रियायती दरें"}</span>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Community & NGO Timeline */}
+      {/* Community & NPO Timeline */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
           <span className="text-xs font-black text-teal-600 dark:text-teal-400 uppercase tracking-widest block">
@@ -199,7 +199,7 @@ export default function About() {
             onMouseEnter={() => handleSpeech(language === "en" ? "How we grew from a small neighborhood screening cell to a fully-equipped physiotherapy clinic." : "ഒരു ചെറിയ മെഡിക്കൽ ക്യാമ്പിൽ നിന്നും ആരംഭിച്ച് അത്യാധുനിക ഫിസിയോതെറാപ്പി ക്ലിനിക്കിലേക്ക് ഞങ്ങൾ വളർന്ന നാൾവഴികൾ.")}
           >
             {language === "en"
-              ? "Through continuous support from local doctors, well-wishers, and generous donors, our NGO trust has consistently expanded medical access to families in need."
+              ? "Through continuous support from local doctors, well-wishers, and generous donors, our NPO trust has consistently expanded medical access to families in need."
               : "നാട്ടുകാരുടെയും ഡോക്ടർമാരുടെയും ഉദാരമനസ്കരുടെയും സഹായത്തോടെ ഞങ്ങളുടെ ചാരിറ്റബിൾ ട്രസ്റ്റ് നിർധനരായ രോഗികൾക്കായി ചികിത്സാ സൗകര്യങ്ങൾ വിപുലീകരിച്ചു കൊണ്ടിരിക്കുന്നു."}
           </p>
         </div>

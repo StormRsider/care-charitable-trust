@@ -1,7 +1,7 @@
 export interface ClinicConfig {
   name: string;
-  ngoName: string;
-  ngoRegNumber: string;
+  npoName: string;
+  npoRegNumber: string;
   phone: string;
   phoneFormatted: string;
   email: string;
@@ -35,8 +35,8 @@ export interface ClinicConfig {
 
 export const clinicConfig: ClinicConfig = {
   name: "Care Village",
-  ngoName: "Care Charitable Trust",
-  ngoRegNumber: "Reg. No: 343/2021/IV",
+  npoName: "Care Charitable Trust",
+  npoRegNumber: "Reg. No: 343/2021/IV",
   phone: "+918281869769",
   phoneFormatted: "+91 8281 869769",
   email: "careedappal@gmail.com",

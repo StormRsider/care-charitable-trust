@@ -16,7 +16,7 @@ export interface TranslationSet {
   btnHeroContact: string;
   heroTrustBadge: string;
 
-  // Overview / NGO Intro
+  // Overview / NPO Intro
   introTitle: string;
   introSubtitle: string;
   introText1: string;
@@ -60,7 +60,7 @@ export interface TranslationSet {
   galleryTabCamps: string;
   galleryClose: string;
 
-  // Outreach / NGO
+  // Outreach / NPO
   outreachTitle: string;
   outreachSubtitle: string;
   outreachCampTitle: string;
@@ -152,7 +152,7 @@ export const translations: Record<"en" | "ml", TranslationSet> = {
     heroTitle: "Compassionate Care & Quality Rehabilitation",
     heroSubtitle: "Dedicated to restoring mobility, easing pain, and uplifting lives near Salafi Masjid, Edappal, Kerala.",
     btnHeroBook: "Book Appointment",
-    btnHeroContact: "Contact NGO",
+    btnHeroContact: "Contact NPO",
     heroTrustBadge: "🏥 A Charitable Trust Initiative",
 
     introTitle: "Compassionate Healing, Powered by Community",
@@ -190,10 +190,10 @@ export const translations: Record<"en" | "ml", TranslationSet> = {
     galleryTabClinic: "Environment",
     galleryTabEquipment: "Equipment",
     galleryTabRooms: "Therapy Rooms",
-    galleryTabCamps: "NGO Camps",
+    galleryTabCamps: "NPO Camps",
     galleryClose: "Close Preview",
 
-    outreachTitle: "NGO & Community Welfare Programs",
+    outreachTitle: "NPO & Community Welfare Programs",
     outreachSubtitle: "Care Charitable Trust goes beyond the clinic doors to run impactful welfare initiatives for the local community.",
     outreachCampTitle: "Free Health & Diagnostic Camps",
     outreachCampDesc: "We organize monthly community diagnostic camps in remote villages, offering free posture screening, stroke assessment, and introductory pain consultations.",
@@ -319,7 +319,7 @@ export const translations: Record<"en" | "ml", TranslationSet> = {
     galleryTabCamps: "മെഡിക്കൽ ക്യാമ്പുകൾ",
     galleryClose: "ക്ലോസ് ചെയ്യുക",
 
-    outreachTitle: "NGO & കമ്മ്യൂണിറ്റി വെൽഫെയർ പ്രോഗ്രാമുകൾ",
+    outreachTitle: "NPO & കമ്മ്യൂണിറ്റി വെൽഫെയർ പ്രോഗ്രാമുകൾ",
     outreachSubtitle: "ഗ്രാമീണ മേഖലകളിലെ ബുദ്ധിമുട്ടുന്ന രോഗികളിലേക്ക് പ്രത്യാശയും കമ്മ്യൂണിറ്റി പിന്തുണയുമായി കെയർ ചാരിറ്റബിൾ ട്രസ്റ്റ് എത്തുന്നു.",
     outreachCampTitle: "സൗജന്യ മെഡിക്കൽ ക്യാമ്പുകൾ",
     outreachCampDesc: "ഗ്രാമപ്രദേശങ്ങളിൽ ഞങ്ങൾ എല്ലാ മാസവും സൗജന്യ രോഗനിർണ്ണയ ക്യാമ്പുകളും സ്ട്രോക്ക് പരിശോധനകളും നടത്തുന്നു.",

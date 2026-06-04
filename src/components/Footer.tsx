@@ -85,9 +85,9 @@ export default function Footer() {
           <a
             href="#contact"
             className="rounded-xl bg-brand-light hover:bg-white text-brand-dark font-bold text-sm px-6 py-3 transition-colors shrink-0 text-center w-full md:w-auto shadow-md uppercase tracking-wider"
-            onMouseEnter={() => handleSpeech(language === "en" ? "Contact NGO" : "സമ്പർക്കം")}
+            onMouseEnter={() => handleSpeech(language === "en" ? "Contact NPO" : "സമ്പർക്കം")}
           >
-            {language === "en" ? "Contact NGO" : "സമ്പർക്കം"}
+            {language === "en" ? "Contact NPO" : "സമ്പർക്കം"}
           </a>
         </div>
 
@@ -122,7 +122,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-brand-lightest bg-brand-slate/20 border border-brand-slate/40 px-3 py-1.5 rounded-lg w-fit">
               <Award className="h-3.5 w-3.5" />
-              <span>{clinicConfig.ngoRegNumber}</span>
+              <span>{clinicConfig.npoRegNumber}</span>
             </div>
           </div>
 
@@ -210,7 +210,7 @@ export default function Footer() {
           </span>
           <div className="flex items-center gap-2">
             <span>Operated by</span>
-            <span className="font-bold text-white">{clinicConfig.ngoName}</span>
+            <span className="font-bold text-white">{clinicConfig.npoName}</span>
             <span className="h-3 w-px bg-brand-slate/40"></span>
             <span>Edappal, Kerala ❤️</span>
           </div>

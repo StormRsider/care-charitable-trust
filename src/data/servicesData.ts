@@ -117,40 +117,6 @@ export const servicesData: ServiceItem[] = [
     billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
   },
   {
-    id: "pediatric-physio",
-    title: "Pediatric Physiotherapy",
-    titleHindi: "കുട്ടികൾക്കായുള്ള ഫിസിയോതെറാപ്പി (പീഡിയാട്രിക്)",
-    description: "Compassionate, play-based motor development therapy for children experiencing cerebral palsy, developmental delays, or genetic conditions.",
-    descriptionHindi: "സെറിബ്രൽ പാൾസി, വളർച്ചാ കാലതാമസം (Developmental delay), ജന്മനായുള്ള വൈകല്യങ്ങൾ എന്നിവയുള്ള കുട്ടികൾക്കായി കളിയിലൂടെയുള്ള വ്യായാമങ്ങൾ.",
-    symptoms: [
-      "Cerebral Palsy Spasticity",
-      "Delayed Milestones (Sitting, Standing, Walking delay)",
-      "Congenital Clubfoot (Talipes)",
-      "Juvenile Muscle Dystrophy"
-    ],
-    symptomsHindi: [
-      "സെറിബ്രൽ പാൾസി മൂലം കുട്ടികൾക്കുള്ള പേശീവലിവ്",
-      "വളർച്ചാ കാലതാമസം (ഇരിക്കാനും നടക്കാനുമുള്ള താമസം)",
-      "ജന്മനായുള്ള കാൽപ്പാദ വൈകല്യങ്ങൾ (ക്ലബ്ബ് ഫൂട്ട്)",
-      "പേശികളുടെ വളർച്ചക്കുറവ് മൂലം ഉണ്ടാകുന്ന ബലഹീനതകൾ"
-    ],
-    techniques: [
-      "Neurodevelopmental Treatment (NDT)",
-      "Play-Infused Sensory Integration",
-      "Orthotic Prescription & Gait Retraining",
-      "Parent/Caregiver Guided stretches"
-    ],
-    techniquesHindi: [
-      "ന്യൂറോ ഡെവലപ്‌മെന്റൽ ട്രീറ്റ്‌മെന്റ് (NDT)",
-      "കളിയിലൂടെയുള്ള സെൻസറി ഇന്റഗ്രേഷൻ തെറാപ്പി",
-      "ഓർത്തോട്ടിക് സഹായങ്ങളും നടത്ത പരിശീലനവും",
-      "മാതാപിതാക്കൾക്ക് നൽകുന്ന വ്യായാമ നിർദ്ദേശങ്ങൾ"
-    ],
-    iconName: "Heart",
-    billingType: "100% Free - Supported by Donations",
-    billingTypeHindi: "100% സൗജന്യം - സംഭാവനകളിലൂടെ പ്രവർത്തിക്കുന്നത്"
-  },
-  {
     id: "geriatric-rehab",
     title: "Geriatric Rehabilitation",
     titleHindi: "മുതിർന്നവർക്കായുള്ള പുനരധിവാസം (ജെറിയാട്രിക്)",
