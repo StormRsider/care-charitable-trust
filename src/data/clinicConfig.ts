@@ -45,10 +45,8 @@ export const clinicConfig: ClinicConfig = {
   googleMapsIframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2992443228127!2d76.01106659999998!3d10.788377400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b9003000e66d%3A0x41fae23ccb26c14b!2sCARE%20VILLAGE%20EDAPPAL!5e0!3m2!1sen!2sin!4v1780254579118!5m2!1sen!2sin",
   address: "Q2Q6+9C4, CARE VILLAGE -CALICUT ROAD, VIA, near GEETHA DOCTOR, opp. GOVINDA THEATRE, Edappal, Kerala 679576",
   socials: {
-    facebook: "https://facebook.com/carevillage.edappal",
-    twitter: "https://twitter.com/carevillage_edp",
-    instagram: "https://instagram.com/carevillage.edappal",
-    linkedin: "https://linkedin.com/company/care-village-edappal"
+    facebook: "https://www.facebook.com/p/Care-Charitable-Trust-Edappal-100079671062174/",
+    instagram: "https://www.instagram.com/care.edappal/?hl=en"
   },
   timings: {
     weekdays: "Monday - Friday",
