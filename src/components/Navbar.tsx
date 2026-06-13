@@ -7,16 +7,14 @@ import { useAccessibility } from "../context/AccessibilityContext";
 import { 
   Menu, 
   X, 
-  Accessibility, 
   Globe
 } from "lucide-react";
 
 interface NavbarProps {
   onOpenBooking: () => void;
-  onOpenA11y: () => void;
 }
 
-export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
+export default function Navbar({ onOpenBooking }: NavbarProps) {
   const { language, toggleLanguage } = useLanguage();
   const { speakText } = useAccessibility();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -144,15 +142,7 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
               <span className="tracking-wide">{language === "en" ? "മലയാളം" : "English"}</span>
             </button>
 
-            {/* Accessibility Settings */}
-            <button
-              onClick={onOpenA11y}
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-brand-slate/40 text-brand-light hover:border-white hover:text-white transition-colors duration-300"
-              title="Accessibility Settings"
-              onMouseEnter={() => handleSpeech("Accessibility Settings")}
-            >
-              <Accessibility className="h-4 w-4" />
-            </button>
+
 
           </div>
 
@@ -166,12 +156,7 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
               <span>{language === "en" ? "ML" : "EN"}</span>
             </button>
 
-            <button
-              onClick={onOpenA11y}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-slate/40 text-brand-light"
-            >
-              <Accessibility className="h-3.5 w-3.5" />
-            </button>
+
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -202,16 +187,7 @@ export default function Navbar({ onOpenBooking, onOpenA11y }: NavbarProps) {
             <hr className="border-brand-slate/20 my-1" />
             
             <div className="flex items-center justify-between gap-3 pt-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenA11y();
-                }}
-                className="flex flex-1 h-10 items-center justify-center gap-2 rounded-xl border border-brand-slate/40 text-xs text-brand-light hover:border-white hover:text-white"
-              >
-                <Accessibility className="h-4.5 w-4.5" />
-                <span>{language === "en" ? "Accessibility" : "ആക്സസിബിലിറ്റി"}</span>
-              </button>
+
             </div>
 
           </nav>
