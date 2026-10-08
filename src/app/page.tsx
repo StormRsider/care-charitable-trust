@@ -295,7 +295,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="absolute bottom-20 flex flex-col items-center gap-2 animate-bounce z-30">
+          <div className="pt-2 sm:pt-4 flex flex-col items-center gap-2 animate-bounce z-30">
             <span className="text-[10px] tracking-widest uppercase text-brand-light font-bold">
               {language === "en" ? "Scroll Down" : "താഴേക്ക് സ്ക്രോൾ ചെയ്യുക"}
             </span>
