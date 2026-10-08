@@ -850,73 +850,73 @@ export default function HomePage() {
       </section>
 
       {/* ================= SECTION 5: GALLERY & DONATION SECTION ================= */}
-      <section id="gallery" className="pt-24 pb-32 bg-background scroll-mt-16 relative overflow-hidden reveal-on-scroll">
+      <section id="gallery" className="py-12 sm:pt-24 sm:pb-32 bg-background scroll-mt-16 relative overflow-hidden reveal-on-scroll">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 max-w-3xl mx-auto mb-16">
+          <div className="text-center space-y-4 max-w-3xl mx-auto mb-8 sm:mb-16">
             <span className="text-xs font-black uppercase tracking-widest text-brand-slate">
               {language === "en" ? "NPO Transparency & Trust" : "സുതാര്യതയും കമ്മ്യൂണിറ്റി പിന്തുണയും"}
             </span>
             <h2 
-              className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
+              className="font-display text-3xl sm:text-5xl lg:text-6xl font-black text-brand-dark tracking-tight"
               onMouseEnter={() => handleSpeech("CARE REHAB CENTER Gallery and Donation Support")}
             >
               {language === "en" ? "Gallery & Donation Support" : "ഗാലറിയും സംഭാവനയും"}
             </h2>
-            <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
               {language === "en"
                 ? "Explore our clean clinical environment and outreach checkups, and directly support our mission to keep clinical care 100% free for everyone."
                 : "ഞങ്ങളുടെ മികച്ച ഫിസിയോതെറാപ്പി വിഭാഗം, സൗകര്യങ്ങൾ, പ്രദേശങ്ങളിൽ നടത്തിയ സൗജന്യ മെഡിക്കൽ ക്യാമ്പുകൾ എന്നിവയുടെ ദൃശ്യങ്ങൾ കാണുകയും നിർധന രോഗികൾക്ക് സൗജന്യ ചികിത്സ ഉറപ്പുവരുത്താൻ സംഭാവന ചെയ്യുകയും ചെയ്യാം."}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             
             {/* Left Column: Asymmetrical Visual Collage (7/12 Width) */}
-            <div className="lg:col-span-7 grid grid-cols-2 gap-4 h-fit">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 h-fit">
               {/* Item 1 - Large / Full Height Column */}
-              <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-3/4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-4/3 sm:aspect-3/4 shadow-sm hover:shadow-md transition-shadow">
                 <img 
                   src={galleryItems[0].url} 
                   alt={galleryItems[0].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
-                <div className="absolute bottom-5 left-5 right-5 z-20 text-left">
-                  <span className="text-[10px] bg-brand-light text-brand-dark px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-95 z-10" />
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 z-20 text-left">
+                  <span className="text-[10px] bg-white text-brand-dark px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider shadow-xs">
                     {language === "en" ? "Clinic" : "ക്ലിനിക്"}
                   </span>
-                  <h4 className="font-display font-black text-sm sm:text-base text-white mt-2 leading-tight">
+                  <h4 className="font-display font-black text-base sm:text-lg !text-white mt-2 leading-tight drop-shadow-md">
                     {isMalayalam ? galleryItems[0].titleHindi : galleryItems[0].title}
                   </h4>
                 </div>
               </div>
 
               {/* Stack of two small square ones */}
-              <div className="grid grid-rows-2 gap-4">
-                <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-square shadow-sm hover:shadow-md transition-shadow">
+              <div className="grid grid-cols-1 sm:grid-rows-2 gap-4">
+                <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-4/3 sm:aspect-square shadow-sm hover:shadow-md transition-shadow">
                   <img 
                     src={galleryItems[1].url} 
                     alt={galleryItems[1].title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-95 z-10" />
                   <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
-                    <h4 className="font-display font-black text-xs sm:text-sm text-white leading-tight">
+                    <h4 className="font-display font-black text-sm sm:text-base !text-white leading-tight drop-shadow-md">
                       {isMalayalam ? galleryItems[1].titleHindi : galleryItems[1].title}
                     </h4>
                   </div>
                 </div>
 
-                <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-square shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-4/3 sm:aspect-square shadow-sm hover:shadow-md transition-shadow">
                   <img 
                     src={galleryItems[2].url} 
                     alt={galleryItems[2].title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-95 z-10" />
                   <div className="absolute bottom-4 left-4 right-4 z-20 text-left">
-                    <h4 className="font-display font-black text-xs sm:text-sm text-white leading-tight">
+                    <h4 className="font-display font-black text-sm sm:text-base !text-white leading-tight drop-shadow-md">
                       {isMalayalam ? galleryItems[2].titleHindi : galleryItems[2].title}
                     </h4>
                   </div>
@@ -924,18 +924,18 @@ export default function HomePage() {
               </div>
 
               {/* Item 4 - Wide Span */}
-              <div className="col-span-2 relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-16/9 shadow-sm hover:shadow-md transition-shadow">
+              <div className="col-span-1 sm:col-span-2 relative group overflow-hidden rounded-3xl border border-brand-light/60 bg-brand-slate/10 aspect-16/9 shadow-sm hover:shadow-md transition-shadow">
                 <img 
                   src={galleryItems[3].url} 
                   alt={galleryItems[3].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 z-10" />
-                <div className="absolute bottom-5 left-5 right-5 z-20 text-left">
-                  <span className="text-[10px] bg-brand-light text-brand-dark px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-95 z-10" />
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 z-20 text-left">
+                  <span className="text-[10px] bg-white text-brand-dark px-2.5 py-0.5 rounded-md font-bold uppercase tracking-wider shadow-xs">
                     {language === "en" ? "Outreach" : "ഔട്ട്രീച്ച്"}
                   </span>
-                  <h4 className="font-display font-black text-sm sm:text-base text-white mt-2 leading-tight">
+                  <h4 className="font-display font-black text-base sm:text-lg !text-white mt-2 leading-tight drop-shadow-md">
                     {isMalayalam ? galleryItems[3].titleHindi : galleryItems[3].title}
                   </h4>
                 </div>

@@ -1,35 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  /* Warm, Compassionate NGO redistribution of the same color palette */
-  --background: #F3FBFD; /* 60% base: Breathable clinical white with soft icy blue/sky tint */
-  --foreground: #3A474D; /* Softened dark slate for body text (highly readable, non-harsh) */
+  /* Warm, Compassionate NPO redistribution of high-contrast color palette */
+  --background: #F8FAFC; /* 60% base: Breathable clinical off-white */
+  --foreground: #1E293B; /* Crisp dark slate for body text (highly readable, high contrast) */
   
   --brand-lightest: #E0FBFC; /* Icy Blue sky highlights */
   --brand-light: #C2DFE3;    /* 20% soft secondary (gentle contrasts, cards) */
-  --brand-gray: #9DB4C0;     /* 10% medium contrast (borders, glassmorphism, dividers) */
-  --brand-slate: #5C6B73;    /* 7% dark accent (headings, secondary actions, navbar) */
-  --brand-dark: #5C6B73;     /* Mapped to slate for light elements to automatically smooth visual contrast! */
+  --brand-gray: #64748B;     /* Medium slate contrast (borders, dividers) */
+  --brand-slate: #334155;    /* Dark slate accent (high contrast text & headings) */
+  --brand-dark: #1E293B;     /* Deep slate for dark containers & sticky navbar */
   
-  --primary: #5C6B73;        /* Slate dark accent is now the primary branding color */
-  --primary-hover: #3A474D;
+  --primary: #1E293B;        /* Slate dark accent is primary branding color */
+  --primary-hover: #0F172A;
   --primary-light: #C2DFE3;
   
-  --secondary: #5C6B73;
-  --accent: #5C6B73;
+  --secondary: #334155;
+  --accent: #334155;
   --accent-light: #E0FBFC;
   
   --card-bg: #FFFFFF;
-  --border-color: rgba(157, 180, 192, 0.35); /* Soft borders */
+  --border-color: rgba(100, 116, 139, 0.25); /* Soft borders */
 }
 
 /* 3% Deep Dark ONLY for Hero video overlays, footers, and text over video */
 .dark-theme-section, footer {
-  --background: #253237; /* Deep charcoal dark */
-  --foreground: #E0FBFC; /* Light sky highlight text */
-  --brand-dark: #253237; /* Restored deep dark hex for cinematic containers */
-  --card-bg: rgba(37, 50, 55, 0.85);
-  --border-color: rgba(157, 180, 192, 0.2);
+  --background: #1E293B; /* Deep charcoal dark */
+  --foreground: #F8FAFC; /* Light sky highlight text */
+  --brand-dark: #1E293B; /* Deep dark hex for cinematic containers */
+  --card-bg: rgba(30, 41, 59, 0.85);
+  --border-color: rgba(148, 163, 184, 0.2);
 }
 
 @theme inline {
@@ -72,7 +72,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 900 !important;
   letter-spacing: -0.03em;
-  color: var(--brand-slate);
 }
 
 /* Custom premium transitions */

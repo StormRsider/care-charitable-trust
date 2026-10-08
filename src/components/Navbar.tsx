@@ -66,7 +66,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-500 bg-brand-dark/95 border-b border-brand-slate/25 backdrop-blur-md shadow-md py-2.5 text-white">
+    <header className="sticky top-0 z-50 w-full transition-all duration-500 bg-[#1E293B]/95 border-b border-white/10 backdrop-blur-md shadow-md py-2 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           
@@ -74,7 +74,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <div className="flex items-center">
             <Link 
               href="#" 
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-2.5 sm:gap-3 group"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               onMouseEnter={() => handleSpeech("CARE REHAB CENTER - Care Charitable Trust")}
             >
@@ -83,19 +83,19 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 <img 
                   src={logoSrc} 
                   alt="CARE REHAB CENTER Logo" 
-                  className="h-11 w-11 shrink-0 object-contain rounded-xl bg-white/5 border border-brand-light/35 p-1 smooth-transition group-hover:scale-105"
+                  className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 object-contain rounded-xl bg-white/10 border border-white/20 p-1 smooth-transition group-hover:scale-105"
                   onError={handleLogoError}
                 />
               ) : (
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none smooth-transition group-hover:bg-brand-lightest/20 group-hover:text-white">
+                <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white font-display font-black text-xs tracking-wider uppercase select-none smooth-transition group-hover:bg-white/20">
                   CRC
                 </div>
               )}
               <div className="flex flex-col text-left">
-                <span className="font-display text-lg font-black tracking-tight leading-none group-hover:text-brand-light transition-colors duration-300">
+                <span className="font-display text-sm sm:text-lg font-black tracking-tight leading-none text-white group-hover:text-brand-light transition-colors duration-300">
                   CARE REHAB CENTER
                 </span>
-                <span className="text-[9px] font-bold tracking-wider uppercase text-brand-gray mt-1">
+                <span className="text-[9px] font-bold tracking-wider uppercase text-slate-300 mt-1">
                   Care Charitable Trust
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-brand-light hover:text-white transition-colors duration-300 relative py-1"
+                  className="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-slate-200 hover:text-white transition-colors duration-300 relative py-1"
                   onMouseEnter={() => handleSpeech(link.label)}
                 >
                   {link.label}
@@ -124,25 +124,23 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             {/* Donate Button */}
             <a
               href="#donate"
-              className="flex h-9 items-center justify-center gap-1.5 rounded-xl bg-brand-lightest border border-brand-light/30 px-4 text-xs font-black uppercase tracking-wider text-brand-slate hover:bg-white hover:text-brand-dark transition-all hover:scale-105 active:scale-95 shadow-sm animate-pulse-slow"
+              className="flex h-9 items-center justify-center gap-1.5 rounded-xl bg-white border border-white/30 px-4 text-xs font-black uppercase tracking-wider text-[#1E293B] hover:bg-brand-lightest transition-all hover:scale-105 active:scale-95 shadow-sm animate-pulse-slow"
               onMouseEnter={() => handleSpeech(language === "en" ? "Donate Now to Support Our Cause" : "സംഭാവന നൽകുക")}
             >
-              <span className="h-2 w-2 rounded-full bg-brand-slate animate-ping shrink-0" />
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
               <span>{language === "en" ? "Donate" : "സംഭാവന"}</span>
             </a>
 
             {/* Malayalam Language Selector */}
             <button
               onClick={toggleLanguage}
-              className="flex h-9 items-center gap-2 rounded-xl border border-brand-slate/40 px-3 text-xs font-bold text-brand-light hover:border-white hover:text-white transition-colors duration-300"
+              className="flex h-9 items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-3 text-xs font-bold text-white hover:border-white hover:bg-white/20 transition-colors duration-300"
               title="Change Language / ഭാഷ മാറ്റുക"
               onMouseEnter={() => handleSpeech(language === "en" ? "Change language to Malayalam" : "ഭാഷ ഇംഗ്ലീഷ് ആക്കുക")}
             >
-              <Globe className="h-4 w-4 text-brand-light" />
+              <Globe className="h-4 w-4 text-white" />
               <span className="tracking-wide">{language === "en" ? "മലയാളം" : "English"}</span>
             </button>
-
-
 
           </div>
 
@@ -150,17 +148,15 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={toggleLanguage}
-              className="flex h-8 items-center gap-1 rounded-lg border border-brand-slate/40 px-2.5 text-[10px] font-bold text-brand-light"
+              className="flex h-9 items-center gap-1.5 rounded-xl border border-white/25 bg-white/10 px-3 text-xs font-bold text-white shadow-xs active:scale-95"
             >
-              <Globe className="h-3 w-3" />
+              <Globe className="h-3.5 w-3.5 text-white" />
               <span>{language === "en" ? "ML" : "EN"}</span>
             </button>
 
-
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-slate/40 text-brand-light bg-brand-slate/10"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/25 text-white bg-white/10 active:scale-95"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
