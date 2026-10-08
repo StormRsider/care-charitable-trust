@@ -249,13 +249,13 @@ export default function HomePage() {
           {mounted && !logoError ? (
             <img 
               src={logoSrc} 
-              alt="Care Village Logo" 
+              alt="CARE REHAB CENTER Logo" 
               className="h-16 w-16 shrink-0 object-contain rounded-2xl bg-white/10 border border-brand-light/30 p-1.5 animate-float shadow-xl"
               onError={handleLogoError}
             />
           ) : (
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none animate-float shadow-xl">
-              CV
+              CRC
             </div>
           )}
 
@@ -263,9 +263,9 @@ export default function HomePage() {
             <h1 
               className="font-display text-5xl sm:text-8xl font-black tracking-tighter !text-white drop-shadow-[0_4px_24px_rgba(224,251,252,0.5)] uppercase leading-none"
               style={{ color: '#FFFFFF' }}
-              onMouseEnter={() => handleSpeech("Care Village")}
+              onMouseEnter={() => handleSpeech("CARE REHAB CENTER")}
             >
-              Care Village
+              CARE REHAB CENTER
             </h1>
             
             <p 
@@ -342,8 +342,8 @@ export default function HomePage() {
                 </p>
                 <p onMouseEnter={() => handleSpeech("Located near Salafi Masjid in Edappal, Kerala, we specialize in high-quality physical therapy and multi-disciplinary community support.")}>
                   {language === "en" 
-                    ? "Located near Salafi Masjid in Edappal, Kerala, the 'Care Village' rehabilitation wing offers comprehensive physical therapy completely free of cost to all patients in need. Our operations, modern equipment, and treatments are supported entirely by the compassionate contributions of our donors, well-wishers, and dedicated patrons like adil who stand by our community vision."
-                    : "എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന 'കെയർ വില്ലേജ്' ഫിസിയോതെറാപ്പി വിഭാഗത്തിൽ വരുന്ന എല്ലാ രോഗികൾക്കും തികച്ചും സൗജന്യമായാണ് ഞങ്ങൾ മികച്ച ചികിത്സകൾ നൽകുന്നത്. ഞങ്ങളുടെ പ്രവർത്തനങ്ങളും ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും പൂർണ്ണമായും കാരുണ്യമനസ്കരും adil പോലുള്ള ഞങ്ങളെ പിന്തുണയ്ക്കുന്നവരും നൽകുന്ന സംഭാവനകൾ വഴിയാണ് മുന്നോട്ട് പോകുന്നത്."}
+                    ? "Located near Salafi Masjid in Edappal, Kerala, the 'CARE REHAB CENTER' rehabilitation wing offers comprehensive physical therapy completely free of cost to all patients in need. Our operations, modern equipment, and treatments are supported entirely by the compassionate contributions of our donors, well-wishers, and dedicated patrons like adil who stand by our community vision."
+                    : "എടപ്പാൾ സലഫി മസ്ജിദിന് സമീപം പ്രവർത്തിക്കുന്ന 'കെയർ റീഹാബ് സെന്റർ' ഫിസിയോതെറാപ്പി വിഭാഗത്തിൽ വരുന്ന എല്ലാ രോഗികൾക്കും തികച്ചും സൗജന്യമായാണ് ഞങ്ങൾ മികച്ച ചികിത്സകൾ നൽകുന്നത്. ഞങ്ങളുടെ പ്രവർത്തനങ്ങളും ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും പൂർണ്ണമായും കാരുണ്യമനസ്കരും adil പോലുള്ള ഞങ്ങളെ പിന്തുണയ്ക്കുന്നവരും നൽകുന്ന സംഭാവനകൾ വഴിയാണ് മുന്നോട്ട് പോകുന്നത്."}
                 </p>
               </div>
 
@@ -399,10 +399,10 @@ export default function HomePage() {
                   <div className="flex items-center justify-between border-b border-brand-light/60 pb-4">
                     <div className="flex items-center gap-2">
                       <div className="h-10 w-10 bg-brand-dark text-white rounded-lg flex items-center justify-center shadow-md">
-                        <span className="font-display font-black text-xs text-brand-light">CV</span>
+                        <span className="font-display font-black text-xs text-brand-light">CRC</span>
                       </div>
                       <div className="flex flex-col text-left">
-                        <span className="font-display font-black text-sm text-brand-dark block">Care Village</span>
+                        <span className="font-display font-black text-sm text-brand-dark block">CARE REHAB CENTER</span>
                         <span className="text-[9px] text-brand-slate tracking-widest font-black uppercase">Edappal Center</span>
                       </div>
                     </div>
@@ -413,8 +413,8 @@ export default function HomePage() {
 
                   <p className="font-display font-medium text-brand-dark text-sm leading-relaxed italic text-left">
                     {language === "en"
-                      ? "“At Care Village, we provide premium physical therapy and rehabilitation completely free of cost for all patients. We rely entirely on the generosity of our donors to keep our care universal, human, and accessible to everyone in need.”"
-                      : "“കെയർ വില്ലേജിൽ വരുന്ന ഏതൊരു രോഗിക്കും ഞങ്ങൾ ഫിസിയോതെറാപ്പിയും മറ്റ് മികച്ച ചികിത്സകളും പൂർണ്ണമായും സൗജന്യമായാണ് നൽകുന്നത്. ഈ കാരുണ്യ പ്രവർത്തനം തടസ്സമില്ലാതെ മുന്നോട്ട് കൊണ്ടുപോകുന്നതിന് നിങ്ങളുടെ ഉദാരമായ സംഭാവനകൾ ഞങ്ങൾ അഭ്യർത്ഥിക്കുന്നു.”"}
+                      ? "“At CARE REHAB CENTER, we provide premium physical therapy and rehabilitation completely free of cost for all patients. We rely entirely on the generosity of our donors to keep our care universal, human, and accessible to everyone in need.”"
+                      : "“കെയർ റീഹാബ് സെന്ററിൽ വരുന്ന ഏതൊരു രോഗിക്കും ഞങ്ങൾ ഫിസിയോതെറാപ്പിയും മറ്റ് മികച്ച ചികിത്സകളും പൂർണ്ണമായും സൗജന്യമായാണ് നൽകുന്നത്. ഈ കാരുണ്യ പ്രവർത്തനം തടസ്സമില്ലാതെ മുന്നോട്ട് കൊണ്ടുപോകുന്നതിന് നിങ്ങളുടെ ഉദാരമായ സംഭാവനകൾ ഞങ്ങൾ അഭ്യർത്ഥിക്കുന്നു.”"}
                   </p>
                 </div>
 
@@ -538,8 +538,8 @@ export default function HomePage() {
             </h2>
             <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Care Village provides 100% free premium clinical care. Direct your generous charity to keep this noble work fully active and self-sustaining."
-                : "കെയർ വില്ലേജ് തികച്ചും സൗജന്യമായാണ് അത്യാധുനിക ചികിത്സകൾ നൽകുന്നത്. സദ്പ്രവർത്തികൾ തടസ്സമില്ലാതെ മുന്നോട്ട് കൊണ്ടുപോകാൻ സംഭാവന ചെയ്യൂ."}
+                ? "CARE REHAB CENTER provides 100% free premium clinical care. Direct your generous charity to keep this noble work fully active and self-sustaining."
+                : "കെയർ റീഹാബ് സെന്റർ തികച്ചും സൗജന്യമായാണ് അത്യാധുനിക ചികിത്സകൾ നൽകുന്നത്. സദ്പ്രവർത്തികൾ തടസ്സമില്ലാതെ മുന്നോട്ട് കൊണ്ടുപോകാൻ സംഭാവന ചെയ്യൂ."}
             </p>
           </div>
 
@@ -743,8 +743,8 @@ export default function HomePage() {
             </h2>
             <p className="text-base text-brand-slate max-w-2xl mx-auto leading-relaxed">
               {language === "en"
-                ? "Our Care Village center features premium equipment and specialized physical therapy devices operated completely free of cost as a charitable mission."
-                : "കെയർ വില്ലേജിൽ ലഭ്യമാക്കിയിട്ടുള്ള അത്യാധുനിക ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും നടത്ത പരിശീലന സാമഗ്രകളും താഴെ പറയുന്നവയാണ്. ഇവയെല്ലാം പൂർണ്ണമായും സൗജന്യമാണ്."}
+                ? "Our CARE REHAB CENTER center features premium equipment and specialized physical therapy devices operated completely free of cost as a charitable mission."
+                : "കെയർ റീഹാബ് സെന്ററിൽ ലഭ്യമാക്കിയിട്ടുള്ള അത്യാധുനിക ഫിസിയോതെറാപ്പി ഉപകരണങ്ങളും നടത്ത പരിശീലന സാമഗ്രകളും താഴെ പറയുന്നവയാണ്. ഇവയെല്ലാം പൂർണ്ണമായും സൗജന്യമാണ്."}
             </p>
           </div>
 
@@ -859,7 +859,7 @@ export default function HomePage() {
             </span>
             <h2 
               className="font-display text-4xl sm:text-6xl font-black text-brand-dark tracking-tight"
-              onMouseEnter={() => handleSpeech("Care Village Gallery and Donation Support")}
+              onMouseEnter={() => handleSpeech("CARE REHAB CENTER Gallery and Donation Support")}
             >
               {language === "en" ? "Gallery & Donation Support" : "ഗാലറിയും സംഭാവനയും"}
             </h2>
@@ -963,7 +963,7 @@ export default function HomePage() {
 
                 <p className="text-sm text-brand-slate leading-relaxed">
                   {language === "en" 
-                    ? "Care Village relies completely on public donations and kind well-wishers to provide state-of-the-art physiotherapy treatments free of cost to underprivileged families."
+                    ? "CARE REHAB CENTER relies completely on public donations and kind well-wishers to provide state-of-the-art physiotherapy treatments free of cost to underprivileged families."
                     : "നിർധന രോഗികൾക്ക് പൂർണ്ണമായും സൗജന്യമായി അത്യാധുനിക ഫിസിയോതെറാപ്പിയും മറ്റ് മികച്ച ചികിത്സകളും നൽകുന്നത് കാരുണ്യമനസ്കരായ ആളുകളുടെ സംഭാവനകൾ വഴിയാണ്."}
                 </p>
 
@@ -1297,7 +1297,7 @@ export default function HomePage() {
             <div className="lg:col-span-7">
               <div className="w-full h-full min-h-[400px] rounded-2xl border border-brand-light overflow-hidden shadow-sm relative bg-brand-lightest/30">
                 <iframe
-                  title="Care Village Edappal Google Map"
+                  title="CARE REHAB CENTER Edappal Google Map"
                   src={clinicConfig.googleMapsIframeUrl}
                   width="100%"
                   height="100%"

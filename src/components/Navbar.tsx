@@ -76,24 +76,24 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               href="#" 
               className="flex items-center gap-3 group"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              onMouseEnter={() => handleSpeech("Care Village - Care Charitable Trust")}
+              onMouseEnter={() => handleSpeech("CARE REHAB CENTER - Care Charitable Trust")}
             >
               {/* Elegant Custom Logo Container with Fallback */}
               {mounted && !logoError ? (
                 <img 
                   src={logoSrc} 
-                  alt="Care Village Logo" 
+                  alt="CARE REHAB CENTER Logo" 
                   className="h-11 w-11 shrink-0 object-contain rounded-xl bg-white/5 border border-brand-light/35 p-1 smooth-transition group-hover:scale-105"
                   onError={handleLogoError}
                 />
               ) : (
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brand-light/30 bg-brand-lightest/10 text-brand-light font-display font-black text-xs tracking-wider uppercase select-none smooth-transition group-hover:bg-brand-lightest/20 group-hover:text-white">
-                  CV
+                  CRC
                 </div>
               )}
               <div className="flex flex-col text-left">
                 <span className="font-display text-lg font-black tracking-tight leading-none group-hover:text-brand-light transition-colors duration-300">
-                  Care Village
+                  CARE REHAB CENTER
                 </span>
                 <span className="text-[9px] font-bold tracking-wider uppercase text-brand-gray mt-1">
                   Care Charitable Trust

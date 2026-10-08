@@ -18,10 +18,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Care Village | Care Charitable Trust | Edappal, Kerala",
+  title: "CARE REHAB CENTER | Care Charitable Trust | Edappal, Kerala",
   description: "Compassion Through Care, Rehabilitation & Community Support. Offering high-quality physiotherapy, stroke rehab, palliative care, and community outreach in Edappal, Malappuram, Kerala.",
   keywords: [
-    "Care Village",
+    "CARE REHAB CENTER",
     "Care Charitable Trust",
     "Physiotherapy Edappal",
     "Palliative Care Kerala",

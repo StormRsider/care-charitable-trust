@@ -104,7 +104,7 @@ export default function Footer() {
               {mounted && !logoError ? (
                 <img 
                   src={logoSrc} 
-                  alt="Care Village Logo" 
+                  alt="CARE REHAB CENTER Logo" 
                   className="h-7 w-7 shrink-0 object-contain rounded bg-white/5 border border-brand-light/35 p-0.5 smooth-transition"
                   onError={handleLogoError}
                 />
@@ -112,7 +112,7 @@ export default function Footer() {
                 <Activity className="h-6 w-6 stroke-[2.5]" />
               )}
               <span className="font-display text-lg font-black text-white leading-none">
-                Care Village
+                CARE REHAB CENTER
               </span>
             </a>
             <p className="text-sm text-brand-light leading-relaxed">

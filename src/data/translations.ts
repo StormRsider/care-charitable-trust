@@ -157,7 +157,7 @@ export const translations: Record<"en" | "ml", TranslationSet> = {
 
     introTitle: "Compassionate Healing, Powered by Community",
     introSubtitle: "Care Charitable Trust bridges the gap in accessible healthcare, providing state-of-the-art rehabilitation.",
-    introText1: "At Care Village, we believe that premium physical rehab should not be a luxury. Operating under a non-profit trust, our clinic ensures that clinical excellence is accessible to everyone entirely free of cost. Our operations are supported fully by the compassionate contributions of our donors and well-wishers.",
+    introText1: "At CARE REHAB CENTER, we believe that premium physical rehab should not be a luxury. Operating under a non-profit trust, our clinic ensures that clinical excellence is accessible to everyone entirely free of cost. Our operations are supported fully by the compassionate contributions of our donors and well-wishers.",
     introText2: "Equipped with modern therapeutic modalities and staffed by fully certified, empathetic physiotherapists, we treat every patient with the dignity and unhurried care they deserve. We don't just treat symptoms; we restore independence.",
     introLearnMore: "Read Our Story",
 
